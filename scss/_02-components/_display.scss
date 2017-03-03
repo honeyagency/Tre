@@ -1,9 +1,6 @@
 .max-wrap {
     max-width: $max-wrap;
 
-    @include media($screen-sm) {
-        max-width: 1440px;
-    }
 }
 
 .flex {

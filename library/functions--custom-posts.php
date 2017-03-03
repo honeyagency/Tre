@@ -39,7 +39,7 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
             $loop->the_post();
 
             // Fill the array with post data we changed in getSinglePost
-            $array[] = getSinglePost($posttype);
+            $array[] = getSinglePost($posttype, null);
         }
 
         // Restores original Post Data
@@ -55,28 +55,33 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
     }
 }
 
-function getSinglePost($posttype = null)
+function getSinglePost($posttype = null, $specificid = null)
 {
-    $postId = get_the_id();
+    if ($specificid != null) {
+        $postId = $specificid[0];
+    } else {
+        $postId = get_the_id();
+    }
+
     if ($posttype == 'project') {
-        $postinfo = prepareProjectFields();
+        $postinfo = prepareProjectFields($postId);
     } else {
         $postinfo = null;
     }
 
-    $attachedimage = new TimberImage(get_post_thumbnail_id());
-    $categories    = get_the_category();
+    $attachedimage = new TimberImage(get_post_thumbnail_id($postId));
+    $categories    = get_the_category($postId);
 
     // setup an array to change the post data returned
     $singlePostArray = array(
-        'date'       => strtotime(get_the_date()),
-        'id'         => get_the_id(),
-        'title'      => get_the_title(),
+        'date'       => strtotime(get_the_date($postId)),
+        'id'         => $postId,
+        'title'      => get_the_title($postId),
         'categories' => $categories,
-        'tags'       => get_the_tags(),
+        'tags'       => get_the_tags($postId),
         'post_type'  => $posttype,
         'image'      => $attachedimage,
-        'link'       => get_permalink(),
+        'link'       => get_permalink($postId),
         'postinfo'   => $postinfo,
     );
 
