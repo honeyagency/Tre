@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<section class="header--bg">
+			<img src="http://tre.dev/wp-content/uploads/2017/02/tre-e1487964595626.jpg" width="100%" alt="" class="">
+			<div class="block--content margin--gutter vertical--center">
+				<h1 class="color--white">Ideas<br>Activated</h1><br><br>
+				<div class="grid--fifth">
+					<h6 class="color--pink font--display">Project:</h6>
+					<hr class="color--pink">
+					<h2 class="color--white">Portal<br><span class="font--thin">2015</span></h2>
+					<a href="{{site.url}}/projects" class="color--gray-links text--uppercase font--even-smaller font--semi-bold">view all projects</a>
+				</div>
+			</div>
+		</section>
+		<section class="spacing--gutter spacing--vert-2">
+		</section>
+	</article>
+{% endblock %}

@@ -1,0 +1,39 @@
+.block--angle-right {
+    img {
+    	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        // animation-duration: 1s;
+        // animation-fill-mode: forwards;
+        // animation-name: angles;
+        // animation-timing-function: $base-cubic;
+        // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    &.after {
+        position: relative;
+        z-index: 1;
+
+        &:after {
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background: inherit;
+            content: '';
+            display: block;
+            height: 50%;
+            transform: skewY(4deg);
+            transform-origin: 0;
+            z-index: -1;
+        }
+    }
+}
+
+@keyframes angles {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+}

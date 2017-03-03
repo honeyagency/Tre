@@ -1,0 +1,6 @@
+<a class="block--project bg--black" href="{{project.link}}">
+	{% if project.postinfo.grid_image %}<img src="{{project.postinfo.grid_image|resize(1304)}}">{% endif %}
+	<div class="project--meta spacing--vert-1 spacing--horiz-1">
+	<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date}}</span></h2>
+</div>
+</a>

@@ -3,7 +3,7 @@ body {
     line-height: $base-line-height;
     font-size: 1.2rem;
     color: $base-font-color;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 %headings {
@@ -35,7 +35,7 @@ $h6: 0.7 * $base-font-size;
 h1 {
     font-size: $h1;
     letter-spacing: 2px;
-    line-height: 1.1;
+    line-height: .8;
     margin-bottom: 0.2em;
 }
 
@@ -60,12 +60,13 @@ h5 {
 h6 {
     font-size: $h6;
     letter-spacing: 1.6px;
-    margin-bottom: 0.5em;
+    margin: 0;
+    line-height: 0.4;
 }
 
 @include media(min-width $screen-sm) {
     h1 {
-        font-size: $h1 * 1.25;
+        font-size: $h1 * 3.25;
     }
 
     h2 {
@@ -182,4 +183,10 @@ code, pre {
 
 p {
     margin-bottom: 1em;
+}
+
+hr {
+    border: 0;
+    border-top: 5px solid;
+    transform: skewX(40deg);
 }

@@ -1,1 +1,126 @@
-nav {}
+nav {
+    display: inline-block;
+    height: 100%;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+
+        li {
+            display: inline-block;
+
+            &.current-menu-item {
+                a {
+                    color: map-get($pink, main);
+                }
+            }
+        }
+    }
+
+    @include media($max-sm) {
+        transform: translateX(100%) translate3d(0, 0, 0);
+        -webkit-transform: translateX(100%) translate3d(0, 0, 0);
+        will-change: top, transform;
+        -webkit-will-change: top, transform;
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        background: map-get($pink, main);
+        position: fixed;
+
+        $tan: tan(4deg);
+
+        top: calc(100px - (#{$tan} * 100vw));
+        left: 0;
+        z-index: 999999;
+        width: 100%;
+        text-align: center;
+
+        ul {
+            li {
+                display: block;
+                padding: .5em 0;
+
+                a {
+                    font-size: 1.7em !important;
+                }
+            }
+        }
+
+        &:before {
+            left: 0;
+            top: 0;
+            right: 0;
+            position: absolute;
+            background: inherit;
+            content: '';
+            display: block;
+            height: 50%;
+            transform: skewY(-4deg);
+            transform-origin: left top;
+            z-index: -1;
+        }
+
+        &:after {
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background: inherit;
+            content: '';
+            display: block;
+            height: 50%;
+            transform: skewY(-4deg);
+            transform-origin: right bottom;
+            z-index: -1;
+        }
+
+        transition: top 0.3s $base-cubic, transform 0.3s $base-cubic;
+    }
+}
+
+// Animations on open
+@include media($max-sm) {
+    body.open {
+        nav {
+            transition: top 0.3s $base-cubic, transform 0.3s $base-cubic;
+            top: 100px;
+            transform: translateX(0%) translate3d(0, 0, 0);
+            -webkit-transform: translateX(0%) translate3d(0, 0, 0);
+            will-change: top, transform;
+            -webkit-will-change: top, transform;
+            -webkit-backface-visibility: hidden;
+            -webkit-perspective: 1000;
+        }
+    }
+
+    body {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            z-index: 999;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 0.3s $base-cubic;
+        }
+
+        header.header {
+            transition: border 0.3s $base-cubic;
+        }
+    }
+
+    body.open {
+        &:after {
+            transition: opacity 0.3s $base-cubic;
+            opacity: 1;
+        }
+
+        header.header {
+            transition: border 0.3s $base-cubic;
+            border-color: transparent !important;
+        }
+    }
+}

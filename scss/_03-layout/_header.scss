@@ -1,0 +1,20 @@
+header {
+    z-index: 9999;
+    position: relative;
+}
+
+.header--bg {
+    position: relative;
+    height: 90vh;
+
+    img {
+        top: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .block--content {
+        position: relative;
+        z-index: 3;
+    }
+}

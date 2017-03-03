@@ -1,0 +1,82 @@
+.font--display {
+    font-family: $display-font;
+}
+
+.font--italic {
+    font-style: italic;
+}
+
+.wf-loading {
+    .font--acumin {
+        font-size: 0.75em;
+    }
+}
+
+.font--acumin {
+    font-family: $heading-font-family;
+    font-size: 1.1em;
+}
+
+.font--thin {
+    font-weight: 100 !important;
+}
+
+.font--regular {
+    font-weight: 400;
+}
+
+.font--semi-bold {
+    font-weight: 600;
+}
+
+.font--bold {
+    font-weight: 700;
+}
+
+.font--normal {
+    font-style: normal !important;
+}
+
+.font--smaller {
+    font-size: 1rem;
+}
+
+.font--even-smaller {
+    font-size: .9rem;
+
+    @include media($max-sm) {
+        font-size: .7rem;
+    }
+}
+
+.font--larger {
+    font-size: 1.6rem;
+}
+
+.text--center {
+    text-align: center !important;
+}
+
+.text--right {
+    text-align: right !important;
+}
+
+.text--uppercase {
+    text-transform: uppercase !important;
+}
+
+.text--lowercase {
+    text-transform: lowercase !important;
+}
+
+.text--capitalize {
+    text-transform: capitalize !important;
+}
+
+.doubble-space {
+    line-height: 2;
+}
+
+.letter--1 {
+    letter-spacing: 1px;
+}

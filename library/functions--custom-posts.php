@@ -16,18 +16,8 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
 
     // Begin statememnts to append the $args array, just so the arrays stay light and clean.
 
-    // If we're looking at work posts, and there is a category to filter by, we need to use custom taxonomies
-    if ($posttype == 'our-work' && $category != null) {
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'work-categories',
-                'field'    => 'slug',
-                'terms'    => array($category),
-            ),
-        );
-    }
     // If there's a category to filter by, we're gonna go ahead and do that
-    elseif ($category != null) {
+    if ($category != null) {
         $args['category_name'] = $category;
     }
     if ($tag != null) {
@@ -68,6 +58,11 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
 function getSinglePost($posttype = null)
 {
     $postId = get_the_id();
+    if ($posttype == 'project') {
+        $postinfo = prepareProjectFields();
+    } else {
+        $postinfo = null;
+    }
 
     $attachedimage = new TimberImage(get_post_thumbnail_id());
     $categories    = get_the_category();
@@ -82,6 +77,7 @@ function getSinglePost($posttype = null)
         'post_type'  => $posttype,
         'image'      => $attachedimage,
         'link'       => get_permalink(),
+        'postinfo'   => $postinfo,
     );
 
     // Restores original Post Data

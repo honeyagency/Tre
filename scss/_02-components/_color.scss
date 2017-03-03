@@ -1,0 +1,19 @@
+.color--gray {
+    color: map-get($gray, main);
+}
+
+.color--gray-links {
+    color: map-get($gray, links);
+}
+
+.color--pink {
+    color: map-get($pink, main);
+}
+
+.color--black {
+    color: map-get($black, main);
+}
+
+.color--white {
+    color: white;
+}

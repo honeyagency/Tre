@@ -1,0 +1,9 @@
+.margin--gutter {
+    margin-right: 1em;
+    margin-left: 1em;
+
+    @include media($screen-md) {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}

@@ -5,9 +5,11 @@
 </head>
 {% endblock %}
 <body class="{{body_class}}" data-template="base.twig">
-<header class="header">
+<header class="header color--gray border--bottom  spacing--vert-2">
+	<div class="max-wrap margin-center spacing--gutter flex flex--wrap justify--between align--items-center">
 	{% block header %}
 		<a class="hdr-logo-link" href="/" rel="home" title="{{site.name}}"><i class="icon-logo" data-grunticon-embed></i></a>
+		<i class="hidden--dsk icon-burger" data-grunticon-embed></i>
 		{% include 'components/navigation.twig' %}
 	{% endblock %}
 </header>
@@ -16,7 +18,6 @@
 		{% block content %}
 			Sorry, no content
 		{% endblock %}
-
 </main>
 {% block footer %}
 	<footer>

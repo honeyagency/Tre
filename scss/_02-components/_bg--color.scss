@@ -1,0 +1,11 @@
+.bg--gray {
+    background-color: map-get($gray, main);
+}
+
+.bg--pink {
+    background-color: map-get($pink, main);
+}
+
+.bg--black {
+    background-color: map-get($black, main);
+}
