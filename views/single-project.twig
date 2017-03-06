@@ -6,6 +6,8 @@
 			<div class="block--content spacing--gutter margin-center max-wrap vertical--center">
 				<h1 class="color--white line--short">{{post.title}}<br><span class="font--thin">{{project.date|date('Y')}}</span></h1>
 			</div>
+			<div class="block--categories color--pink font--display text--right">
+				<hr class="color--pink width">{% for category in post.categories|sort('category.name')|reverse %}<span>{% if loop.index > 1 %}<br>+ {% endif %}{{category.name}}{% endfor %}</span></div>
 		</section>
 		<section class="flex flex--wrap max-wrap margin-center spacing--gutter justify--around align--items-baseline">
 			{% if project.content %}

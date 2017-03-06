@@ -1,6 +1,9 @@
 <a class="block--project bg--black" href="{{project.link}}">
 	{% if project.postinfo.grid_image %}<img src="{{project.postinfo.grid_image|resize(1304)}}">{% endif %}
-	<div class="project--meta spacing--vert-1 spacing--horiz-1">
-	<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date|date('Y')}}</span></h2>
-</div>
+	<div class="project--meta">
+		<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date|date('Y')}}</span></h2>
+		<div class="block--categories color--pink font--display text--right">
+		<hr class="color--pink">{% for category in project.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}
+	</div>
+	</div>
 </a>

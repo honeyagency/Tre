@@ -27,4 +27,18 @@
             }
         }
     }
+
+    .block--categories {
+        position: relative;
+        right: 1em;
+        top: -3em;
+    
+
+        hr {
+            float: right;
+            clear: both;
+            margin-top: -15px;
+            margin-bottom: -15px;
+        }
+    }
 }
