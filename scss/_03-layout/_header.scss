@@ -5,16 +5,15 @@ header {
 
 .header--bg {
     position: relative;
-    height: 90vh;
 
     img {
         top: 0;
-        position: absolute;
+        position: relative;
         z-index: 1;
     }
 
     .block--content {
-        position: relative;
+        position: absolute;
         z-index: 3;
     }
 }

@@ -1,0 +1,21 @@
+.button {
+    border: 1px solid;
+    appearance: none;
+    text-transform: uppercase;
+    line-height: 0;
+    padding: 8px 12px 7px 12px;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #ffc0e9 50%, #ffc0e9 100%);
+    background-position-y: 0%;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic;
+
+    &:hover {
+        background-position-y: 100%;
+        transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic;
+        color: white;
+        border-color: map-get($pink, main);
+    }
+}

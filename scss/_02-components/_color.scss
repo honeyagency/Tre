@@ -5,7 +5,9 @@
 .color--gray-links {
     color: map-get($gray, links);
 }
-
+.color--gray-button {
+    color: map-get($gray, buttons);
+}
 .color--pink {
     color: map-get($pink, main);
 }

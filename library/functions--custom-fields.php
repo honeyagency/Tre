@@ -17,12 +17,46 @@ function prepareProjectFields($postId = null)
     } else {
         $galleryArray = null;
     }
+    if (have_rows('field_58b0c11b0d471')) {
+        $details = array();
+        while (have_rows('field_58b0c11b0d471')) {
+            the_row();
+            $details[] = array(
+                'title'       => get_sub_field('field_58b0c124eb8a6'),
+                'description' => get_sub_field('field_58b0c12beb8a7'),
+            );
+        }
+    } else {
+        $details = null;
+    }
+    $external = array(
+        'link' => get_field('field_58bdb072cdf48'),
+        'text' => get_field('field_58bdb05ecdf47'),
+    );
+
+    // Featured Gallery Content
+
+    $galleryType        = get_field('field_58bdb8b48043a');
+    $galleryMainImageId = get_field('field_58bdb9348043c');
+    if ($galleryType != 'video' && $galleryMainImageId != null) {
+        $galleryMainImage = new TimberImage($galleryMainImageId);
+    } else {
+        $galleryMainImage = null;
+    }
+
+    $galleryFeat = array(
+        'type'  => $galleryType,
+        'video' => get_field('field_58bdb91e8043b'),
+        'image' => $galleryMainImage,
+    );
 
     $section = array(
         'date'       => get_field('field_58b0c0bb0d46c', $postId),
         'grid_image' => $gridImage,
         'content'    => get_field('field_58b0c1100d470', $postId),
-        'details'    => get_field('field_58b0c11b0d471', $postId),
+        'details'    => $details,
+        'external'   => $external,
+        'featured'   => $galleryFeat,
         'gallery'    => $galleryArray,
     );
     return $section;

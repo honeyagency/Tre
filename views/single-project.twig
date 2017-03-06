@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<section class="header--bg block--angle angle--right after">
+			<img src="{{project.grid_image|resize(1920, 1080)}}" width="100%" alt="" class="">
+			<div class="block--content spacing--gutter margin-center max-wrap vertical--center">
+				<h1 class="color--white line--short">{{post.title}}<br><span class="font--thin">{{project.date|date('Y')}}</span></h1>
+			</div>
+		</section>
+		<section class="flex flex--wrap max-wrap margin-center spacing--gutter justify--around align--items-baseline">
+			{% if project.content %}
+				<div class="grid--one grid--md-half">
+					<h3 class="color--pink title--stack color--pink">The<br>Project</h3>
+					{{project.content}}
+					{% if project.external.link != null %}
+						<a href="{{project.external.link}}" class="button color--gray-button" target="_blank">{{project.external.text}}</a>
+					{% endif %}
+				</div>
+			{% endif %}
+			{% if project.details %}
+				<div class="grid--one  block--details grid--md-third">
+					{% for detail in project.details %}
+						<h3>{{detail.title}}</h3>
+						<div>{{detail.description}}</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</section>
+		<section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between">
+			<div class="block--gallery-featured grid--one type--{{project.featured.type}}">
+				{% if project.featured.type == 'image' %}
+					<img src="{{project.featured.image}}" style="width:100%;">
+				{% else %}
+					{{project.featured.video}}
+				{% endif %}
+			</div>
+			<div class="block--gallery-left grid--one grid--sm-half spacing--dsk-vert-2">
+				{% for image in project.gallery %}
+					{% if loop.index is odd %}
+						<img
+						src="{{image|resize(640)}}"
+						alt=""
+						class="grid--one"
+						src-set="
+						{{image|resize(320)}}  320w,
+						{{image|resize(375)}}  375w,
+						{{image|resize(540)}} 540w,
+						{{image|resize(640)}} 640w,
+						{{image|resize(683)}} 683w,
+						{{image|resize(720)}} 720w,
+						{{image|resize(960)}} 960w"
+						sizes="50vw">
+					{% endif %}
+				{% endfor %}
+				</div>
+				<div class="block--gallery-right grid--one grid--sm-half spacing--dsk-vert-2">
+				{% for image in project.gallery %}
+					{% if loop.index is even %}
+						<img
+						src="{{image|resize(640)}}"
+						alt=""
+						class="grid--one"
+						src-set="
+						{{image|resize(320)}}  320w,
+						{{image|resize(375)}}  375w,
+						{{image|resize(540)}} 540w,
+						{{image|resize(640)}} 640w,
+						{{image|resize(683)}} 683w,
+						{{image|resize(720)}} 720w,
+						{{image|resize(960)}} 960w"
+						sizes="50vw">
+					{% endif %}
+				{% endfor %}
+				</div>
+			</section>
+		</article>
+	{% endblock %}

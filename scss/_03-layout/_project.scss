@@ -1,0 +1,30 @@
+.post-type-project {
+    .section--galelry-wrap {
+        .block--gallery-featured {
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            position: relative;
+            padding-bottom: 53.75%;
+            padding-top: 35px;
+            height: 0;
+            overflow: hidden;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .block--gallery-right, .block--gallery-left {
+            img {
+                margin-bottom: 1em;
+            }
+        }
+    }
+}

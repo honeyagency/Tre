@@ -70,7 +70,7 @@ h6 {
     }
 
     h2 {
-        font-size: $h2 * 1.25;
+        font-size: 2em;
     }
 
     h3 {
@@ -183,10 +183,18 @@ code, pre {
 
 p {
     margin-bottom: 1em;
+    letter-spacing: 0.8px;
+    font-size: 16px;
 }
 
 hr {
     border: 0;
     border-top: 5px solid;
     transform: skewX(40deg);
+
+    &.width {
+        width: 120px;
+        margin-top: 10px;
+        margin-left: -5px;
+    }
 }
