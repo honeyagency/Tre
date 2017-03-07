@@ -86,12 +86,18 @@
 }
 
 .title--stack {
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 0.8;
-    margin: 0px 0px -10px -10px;
+    margin: 0px 0px -10px 0px;
 
     @include media($screen-sm) {
-        margin: 0 0 -10px -30px;
+        margin: 0 0 -10px 0px;
+    }
+
+
+    @include media($screen-md) {
+        line-height: 0.8;
+        font-size: 2.5em;
     }
 
 

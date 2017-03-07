@@ -4,6 +4,7 @@ body {
     font-size: 1.1rem;
     color: $base-font-color;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
 }
 
 %headings {
@@ -188,6 +189,9 @@ p {
 }
 
 hr {
+    -webkit-margin-before: 0;
+    margin-before: 0;
+    margin-bottom: 1em;
     border: 0;
     border-top: 5px solid;
     transform: skewX(40deg);

@@ -1,0 +1,32 @@
+.section--home-about {
+    background-size: 100%;
+
+    .block--about-details {
+        margin-left: 20%;
+        width: 300px;
+    }
+
+    padding-top: 20vh;
+    padding-bottom: 45vh;
+
+    @include media($screen-xs) {}
+
+
+    @include media($screen-sm) {}
+
+
+    @include media($screen-md) {
+        padding-top: 30vh;
+        padding-bottom: 50vh;
+
+        .block--about-details {
+            margin-left: 25%;
+        }
+    }
+
+
+    @include media($screen-lg) {}
+
+
+    @include media($screen-xl) {}
+}

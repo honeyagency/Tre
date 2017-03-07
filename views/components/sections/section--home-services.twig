@@ -1,0 +1,16 @@
+<section class="spacing--vert-1 spacing--dsk-vert-3 block--angle angle--left after bg--white">
+	<div class="max-wrap margin-center">
+		<h3 class="grid--one text--center font--display font--light">{{home.services.title}} <hr class="color--pink"></h3>
+		<div class="flex flex--wrap justify--between spacing--vert-1 spacing--dsk-vert-3 spacing--gutter">
+			{% for service in home.services.services %}
+				<div class="grid--one grid--sm-half grid--md-fourth">
+					<h3 class="title--stack color--pink">{{service.title}}</h3>
+					<div class="spacing--dsk-horiz-2">{{service.description}}</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="text--center">
+			<a class="button color--gray text--uppercase" href="{{home.services.button_url.0.guid}}">{{home.services.button_title}}</a>
+		</div>
+	</div>
+</section>

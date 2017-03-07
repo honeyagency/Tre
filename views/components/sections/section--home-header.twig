@@ -1,0 +1,14 @@
+<section class="header--bg block--angle angle--right after">
+	<img src="{{home.header.featured_project.postinfo.grid_image|resize(1920, 1080)}}" width="100%" alt="" class="">
+	<div class="block--content spacing--gutter margin-center max-wrap vertical--center">
+		<h1 class="color--white">{{home.header.header_title}}</h1><br><br>
+		{% if home.header.featured_project != null %}
+			<div>
+				<h6 class="color--pink font--display">Project:</h6>
+				<hr class="color--pink width text--right">
+				<h2 class="color--white line--short">{{home.header.featured_project.title}}<br><span class="font--thin">{{home.header.featured_project.postinfo.date|date('Y')}}</span></h2>
+				<a href="{{home.header.button_url.0.guid}}" class="color--gray-links text--uppercase font--even-smaller font--semi-bold">{{home.header.button_title}}</a>
+			</div>
+		{% endif %}
+	</div>
+</section>
