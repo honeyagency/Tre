@@ -1,6 +1,6 @@
 {% if home.contact.shortcode != null %}
 	<section class="section--home-contact spacing--gutter spacing--vert-2 bg--pink color--black block--angle angle--right before">
-		<h2>{{home.contact.title}}</h2>
+		<h3 class="grid--one text--center font--display font--light">{{home.contact.title}}<hr class="color--black"></h3>
 		{{ function('do_shortcode', home.contact.shortcode) }}
 	</section>
 {% endif %}

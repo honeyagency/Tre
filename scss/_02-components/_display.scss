@@ -1,6 +1,5 @@
 .max-wrap {
     max-width: $max-wrap;
-
 }
 
 .flex {
@@ -44,7 +43,6 @@
 }
 
 .margin-center {
-
     margin: 0 auto;
 }
 
@@ -69,8 +67,17 @@
     transform: translateY(-50%);
     position: relative;
 }
-h1, h2 , h3, h4, h5, h6{
-    hr{
+
+h1, h2, h3, h4, h5, h6 {
+    hr {
         width: 190px;
+    }
+}
+
+.screenreaderonly {
+    @include hide-visually;
+
+    + br {
+        display: none !important;
     }
 }

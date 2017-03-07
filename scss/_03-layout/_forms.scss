@@ -1,0 +1,151 @@
+fieldset {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-weight: 100;
+    padding: 0;
+}
+
+label {
+    display: block;
+    font-weight: 100;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    font-family: $default-font;
+    font-size: $base-font-size;
+            padding: 6px 9px;
+    font-size: 0.9em;
+}
+
+#{$all-text-inputs} {
+    color: map-get($black, main);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border: 1px solid map-get($black, main);
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: border-color .3s ease-in-out;
+    margin-bottom: 1em;
+        padding: 6px 9px;
+    font-size: 0.9em;
+
+
+    // &:hover {
+    //     border-color: darken(map-get($brown, main), 10%);
+    // }
+
+    &:focus {
+        border-color: transparentize(map-get($black, main), .6);
+        box-shadow: 0;
+        outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color: map-get($black, main);
+    }
+
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        color: map-get($black, main);
+    }
+
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: map-get($black, main);
+    }
+
+    &:-ms-input-placeholder {
+        color: map-get($black, main);
+    }
+}
+
+select {
+    background-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-color: map-get($black, main);
+}
+
+textarea {
+    resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    display: inline;
+}
+
+[type="file"] {
+    width: 100%;
+}
+
+select {
+    width: 100%;
+}
+
+[type="submit"] {
+    display: block;
+    appearance: none;
+    border: none;
+}
+
+// contact form
+.wpcf7-validation-errors, .wpcf7-spam-blocked {
+    display: table !important;
+    flex-basis: 100% !important;
+    width: 47.7% !important;
+    border: 0 !important;
+    margin: 0 !important;
+    background-color: darken(map-get($pink, main), 10%) !important;
+    color: white;
+    text-align: center;
+    padding: 1em !important;
+}
+
+.wpcf7-not-valid-tip {
+    margin-top: -1em;
+    margin-bottom: 0.8em;
+    background-color: darken(map-get($pink, main), 10%);
+    padding: 0.4em 0.9em;
+    color: white !important;
+}
+
+.wpcf7-validates-as-required {
+    &:after {
+        content: ' ';
+        display: inline-block;
+    }
+}
+
+.captcha {
+    .wpcf7-not-valid-tip {
+        display: none !important;
+    }
+
+    overflow: hidden;
+    height: 64px;
+    width: 155px;
+
+    @include media($screen-sm) {
+        margin-top: -55px;
+    }
+
+
+    .wpcf7-form-control {
+        top: -10px;
+        position: relative;
+        left: -1px;
+    }
+}
