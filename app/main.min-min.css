@@ -271,7 +271,8 @@ footer section {
       -ms-flex-positive: 1;
           flex-grow: 1;
   padding-left: 1em;
-  padding-right: 1em; }
+  padding-right: 1em;
+  height: 20px; }
 
 footer section:last-of-type {
   border: 0; }
@@ -280,8 +281,7 @@ footer section:last-of-type {
   footer section {
     -ms-flex-preferred-size: 33%;
         flex-basis: 33%;
-    margin-bottom: 1em;
-    height: 30px; }
+    margin-bottom: 1em; }
   footer section:nth-of-type(3n) {
     border: 0; } }
 
@@ -301,13 +301,13 @@ footer .icon-tcb svg, footer .icon-envelope svg, footer .icon-press svg {
 @media screen and (min-width: 768px) {
   footer:after {
     left: 0;
-    bottom: -4vw;
+    bottom: -5vw;
     right: 0;
     position: absolute;
     background: inherit;
     content: '';
     display: block;
-    height: 4vw;
+    height: 5vw;
     -webkit-transform-origin: 0;
             transform-origin: 0;
     z-index: -1; }

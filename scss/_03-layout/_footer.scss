@@ -9,11 +9,11 @@ footer {
         flex-grow: 1;
         padding-left: 1em;
         padding-right: 1em;
+        height: 20px;
 
         @include media($max-md) {
             flex-basis: 33%;
             margin-bottom: 1em;
-            height: 30px;
 
             &:nth-of-type(3n) {
                 border: 0;
@@ -40,13 +40,13 @@ footer {
     @include media($screen-sm) {
         &:after {
             left: 0;
-            bottom: -4vw;
+            bottom: -5vw;
             right: 0;
             position: absolute;
             background: inherit;
             content: '';
             display: block;
-            height: 4vw;
+            height: 5vw;
             transform-origin: 0;
             z-index: -1;
         }
