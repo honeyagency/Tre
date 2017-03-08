@@ -21,7 +21,7 @@ textarea {
     display: block;
     font-family: $default-font;
     font-size: $base-font-size;
-            padding: 6px 9px;
+    padding: 6px 9px;
     font-size: 0.9em;
 }
 
@@ -33,20 +33,20 @@ textarea {
     background-color: transparent;
     border: none;
     border: 1px solid map-get($black, main);
+    border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
     transition: border-color .3s ease-in-out;
     margin-bottom: 1em;
-        padding: 6px 9px;
+    padding: 6px 9px;
     font-size: 0.9em;
-
 
     // &:hover {
     //     border-color: darken(map-get($brown, main), 10%);
     // }
 
     &:focus {
-        border-color: transparentize(map-get($black, main), .6);
+        border-color: transparentize(map-get($black, main), 0.6);
         box-shadow: 0;
         outline: none;
     }
@@ -76,6 +76,11 @@ select {
     -webkit-appearance: none;
     border-radius: 0;
     border-color: map-get($black, main);
+
+    &.icon-arrow-down {
+        background-size: 10px;
+        background-position: 95% 50%;
+    }
 }
 
 textarea {
@@ -93,33 +98,58 @@ textarea {
 
 select {
     width: 100%;
+
+    &:hover, &:active, &:focus {
+        cursor: pointer;
+        outline: none;
+    }
 }
 
 [type="submit"] {
+    border-radius: 0;
     display: block;
     appearance: none;
+    -webkit-appearance: none;
     border: none;
+
+    &:hover, &:active, &:focus {
+        outline: none;
+        cursor: pointer;
+    }
+
+    &.button {
+        padding: 8px 12px 7px 12px;
+        font-size: 0.75em;
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    &.center {
+        margin: 0 auto;
+    }
 }
 
 // contact form
 .wpcf7-validation-errors, .wpcf7-spam-blocked {
     display: table !important;
-    flex-basis: 100% !important;
-    width: 47.7% !important;
     border: 0 !important;
     margin: 0 !important;
     background-color: darken(map-get($pink, main), 10%) !important;
     color: white;
     text-align: center;
     padding: 1em !important;
+    width: 100%;
 }
 
 .wpcf7-not-valid-tip {
-    margin-top: -1em;
-    margin-bottom: 0.8em;
     background-color: darken(map-get($pink, main), 10%);
-    padding: 0.4em 0.9em;
     color: white !important;
+    margin-top: -16px;
+    margin-bottom: 0.8em;
+    padding: 6px 9px;
+    border: 1px solid map-get($black, main);
+    border-top: none;
+    font-size: 0.9em !important;
 }
 
 .wpcf7-validates-as-required {
@@ -147,5 +177,13 @@ select {
         top: -10px;
         position: relative;
         left: -1px;
+    }
+}
+
+.menu-218 {
+    @include media($max-sm) {
+        select {
+            margin-bottom: 1em;
+        }
     }
 }

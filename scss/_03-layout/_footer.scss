@@ -1,6 +1,59 @@
 footer {
-    background-color: $base-font-color;
-    color: white;
-    text-align: center;
-    padding: 1em;
+    section {
+        border-right: 1px solid map-get($gray, footer);
+
+        &:last-of-type {
+            border: 0;
+        }
+
+        flex-grow: 1;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        @include media($max-md) {
+            flex-basis: 33%;
+            margin-bottom: 1em;
+            height: 30px;
+
+            &:nth-of-type(3n) {
+                border: 0;
+            }
+        }
+
+
+        @include media($max-xs) {
+            flex-basis: 75%;
+            margin-bottom: 1em;
+            height: 30px;
+            border: none;
+        }
+    }
+
+    .icon-tcb, .icon-envelope, .icon-press {
+        svg {
+            height: 20px;
+            width: auto;
+            display: block;
+        }
+    }
+
+    @include media($screen-sm) {
+        &:after {
+            left: 0;
+            bottom: -4vw;
+            right: 0;
+            position: absolute;
+            background: inherit;
+            content: '';
+            display: block;
+            height: 4vw;
+            transform-origin: 0;
+            z-index: -1;
+        }
+
+        .block--footer-wrap {
+            top: 2em;
+            position: relative;
+        }
+    }
 }

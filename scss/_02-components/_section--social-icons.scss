@@ -1,0 +1,17 @@
+.section--social-icons {
+    a {
+        display: inline;
+
+        i {
+        	display: inline-block;
+            width: 1em;
+            height: 1em;
+
+            svg {
+                width: 100%;
+
+                path {}
+            }
+        }
+    }
+}

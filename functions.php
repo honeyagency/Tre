@@ -36,6 +36,7 @@ class StarterSite extends TimberSite
         $context['menu'] = new TimberMenu();
         $context['site'] = $this;
         $context['assets'] = get_template_directory_uri() . '/app';
+        $context['options'] = prepareOptionsPage();
         return $context;
     }
     

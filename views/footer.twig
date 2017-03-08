@@ -1,1 +1,32 @@
-Copyright {{"now"|date('Y')}}
+<footer class="bg--black color--pink spacing--gutter spacing--vert-1 block--angle angle--right before">
+	<div class="block--footer-wrap flex flex--wrap justify--between max-wrap margin-center">
+		<section>
+			<i class="icon-tcb vertical--center margin-center table" data-grunticon-embed></i>
+		</section>
+		<section>
+			<a href="{{site.url}}/contact" class="vertical--center margin-center table"><i class="icon-envelope" data-grunticon-embed></i></a>
+		</section>
+		<section>
+			<a href="{{site.url}}/press" class="vertical--center margin-center table"><i class="icon-press" data-grunticon-embed></i></a>
+		</section>
+		{% include 'components/sections/section--social-icons.twig' %}
+		<section class="font--tiny">
+			<span class="margin-center table">
+				Site Design by<br>
+				Honey Agency
+			</span>
+		</section>
+		<section class="font--tiny">
+			<span class="margin-center table">
+				Copyright<br>
+				&copy; {{"now"|date('Y')}}
+			</span>
+		</section>
+		<section class="font--tiny">
+			<span class="margin-center table">
+				All Rights<br>
+				Reserved
+			</span>
+		</section>
+	</div>
+</footer>

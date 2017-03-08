@@ -1,4 +1,22 @@
+.icon-arrow-down { background-image: url('app/icons/arrow-down.png'); background-repeat: no-repeat; }
+
 .icon-burger { background-image: url('app/icons/burger.png'); background-repeat: no-repeat; }
 
+.icon-envelope { background-image: url('app/icons/envelope.png'); background-repeat: no-repeat; }
+
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }
+
+.icon-press { background-image: url('app/icons/press.png'); background-repeat: no-repeat; }
+
+.icon-social--fb { background-image: url('app/icons/social--fb.png'); background-repeat: no-repeat; }
+
+.icon-social--in { background-image: url('app/icons/social--in.png'); background-repeat: no-repeat; }
+
+.icon-social--insta { background-image: url('app/icons/social--insta.png'); background-repeat: no-repeat; }
+
+.icon-social--tw { background-image: url('app/icons/social--tw.png'); background-repeat: no-repeat; }
+
+.icon-social--yt { background-image: url('app/icons/social--yt.png'); background-repeat: no-repeat; }
+
+.icon-tcb { background-image: url('app/icons/tcb.png'); background-repeat: no-repeat; }
 

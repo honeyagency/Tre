@@ -46,6 +46,14 @@
     margin: 0 auto;
 }
 
+.block {
+    display: block;
+}
+
+.table {
+    display: table;
+}
+
 .hidden--mob {
     @include media($max-sm) {
         display: none !important;

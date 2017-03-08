@@ -123,3 +123,27 @@ function prepareHomepageFields()
     );
     return $home;
 }
+
+function prepareOptionsPage()
+{
+    $contact = array(
+        'title' => get_field('field_58bf3eb9a3175', 'option'),
+        'form'  => get_field('field_58bf3ddc34a71', 'option'),
+    );
+    $footer = array(
+        'contact' => $contact,
+
+    );
+    $social = array(
+        'facebook'  => get_field('field_58bf40315c1f8', 'option'),
+        'twitter'   => get_field('field_58bf404d5c1f9', 'option'),
+        'instagram' => get_field('field_58bf406f5c1fa', 'option'),
+        'linkedin'  => get_field('field_58bf40795c1fb', 'option'),
+        'youtube'   => get_field('field_58bf40845c1fc', 'option'),
+    );
+    $section = array(
+        'footer' => $footer,
+        'social' => $social,
+    );
+    return $section;
+}
