@@ -1,14 +1,23 @@
 {% extends "base.twig" %}
 {% block content %}
-	<article class="post-type-{{post.post_type}} max-wrap margin-center spacing--gutter spacing--vert-2 flex flex-wrap justify--center" id="post-{{post.ID}}">
-		<section class="article-content grid--one grid--sm-one grid--md-two-thirds">
-			<h1 class="article-h1">{{post.title}}</h1>
-			<p class="blog-author">
-				<span>By</span><a href="{{post.author.path}}"> {{ post.author.first_name }} {{post.author.last_name}} </a><span>&bull;</span> <time class="text--uppercase font--display">{{ post.post_date|date}}</time>
-			</p>
+	<article class="post-type-{{post.post_type}} flex flex--wrap flex--row-reverse justify--around align--items-baseline" id="post-{{post.ID}}">
+
+		<section class="header--bg block--angle angle--right after grid--one {% if post._thumbnail_id  != null %}bg--image{% else %}bg--pink{% endif %}">
+			{% if post._thumbnail_id  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
+			<div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
+				<h1 class="color--white line--short">{{post.title}}</h1>
+			</div>
+		</section>
+		<div class="blog-author grid--sm-fourth">
+			<strong>{{ post.author.first_name }} {{post.author.last_name}} </strong><br>
+			<time class="text--uppercase font--display">{{ post.post_date|date}}</time>
+			{% include 'components/sections/section--share.twig' %}
+				{# <img src="{{post.author.avatar|resize(300)}}" width="100" align="center">
+				<span>By</span><a class="color--" href="{{post.author.path}}"> {{ post.author.first_name }} {{post.author.last_name}} </a><span></span>
+				<p class="font--smaller">{{post.author.short_biography}}</p> #}
+		</div>
+		<section class="article-content">
 			{{post.content}}
 		</section>
-		{# If you want comments #}
-		{# {% include 'components/comments.twig' %} #} 
 	</article>
 {% endblock %}

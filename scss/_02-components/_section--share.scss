@@ -1,0 +1,23 @@
+.section--share {
+    a {
+        display: inline-block;
+        height: 36px;
+        width: 36px;
+        border-radius: 20px;
+
+        i {
+            svg {
+                height: 18px;
+                width: 18px;
+                top: 50%;
+                position: relative;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+}

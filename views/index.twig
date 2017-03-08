@@ -1,8 +1,18 @@
 {% extends "base.twig" %}
 {% block content %}
-	<section class="spacing--gutter spacing--vert-2">
-		{% for post in posts %}
-			{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-		{% endfor %}
+	<section class="section--blog-grid flex flex--wrap max-wrap margin-center spacing--gutter spacing--vert-2 justify--between align--items-start">
+		{% set fullLoop = posts|length %}
+		{% set halfLoop = fullLoop / 2 %}
+		<div class="grid--one grid--sm-half flex flex--wrap flex--column">
+			{% for post in posts|slice(0,halfLoop) %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
+		</div>
+		<div class="grid--one grid--sm-half flex flex--wrap flex--column">
+			{% for post in posts|slice(halfLoop,fullLoop) %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
+		</div>
 	</section>
+	{% include 'components/sections/section--footer-contact.twig' %}
 {% endblock %}

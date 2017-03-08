@@ -2,6 +2,10 @@
     background-color: map-get($gray, main);
 }
 
+.bg--gray-button {
+    background-color: map-get($gray, buttons);
+}
+
 .bg--pink {
     background-color: map-get($pink, main);
 }

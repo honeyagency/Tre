@@ -78,5 +78,11 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
+function filter_ptags_on_images($content){
+        return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
+}
+
+add_filter('the_content', 'filter_ptags_on_images');
+
 require_once 'functions--custom-fields.php';
 require_once 'functions--custom-posts.php';

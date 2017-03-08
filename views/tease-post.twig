@@ -1,9 +1,9 @@
-{% extends "tease.twig" %}
-
-{% block content %}
-	<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-		<p>{{post.get_preview(25)}}</p>
-		{% if post.thumbnail.src %}
-			<img src="{{post.thumbnail.src}}" />
-		{% endif %}
-{% endblock %}
+<a class="block--project block--blog {% if post.thumbnail %}bg--image{% else %}bg--color{% endif %}" href="{{post.permalink}}">
+	{% if post.thumbnail %}<img src="{{post.thumbnail.src|resize(1304)}}">{% endif %}
+	<div class="project--meta">
+		<h2 class="color--white">{{post.title}}<br><span class="font--light">{{post.date|date('Y')}}</span></h2>
+		<div class="block--categories color--pink font--display text--right">
+			<hr class="color--pink">{% for category in post.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}
+		</div>
+	</div>
+</a>

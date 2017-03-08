@@ -15,10 +15,11 @@
                 background: inherit;
                 content: '';
                 display: block;
-                height: 8vw;
-                transform: skewY(4deg);
-                transform-origin: 0;
+                height: 50%;
+                transform: skewY(-4deg);
+                transform-origin: bottom;
                 z-index: -1;
+                top: 60%;
             }
         }
 
@@ -53,11 +54,10 @@
                 background: inherit;
                 content: '';
                 display: block;
-                height: 50%;
-                transform: skewY(-4deg);
-                transform-origin: bottom;
+                height: 8vw;
+                transform: skewY(4deg);
+                transform-origin: 0;
                 z-index: -1;
-                top: 60%;
             }
         }
     }
@@ -109,6 +109,7 @@
 
         + .block--angle {
             // padding-top: 20vw;
+       
         }
     }
 

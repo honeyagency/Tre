@@ -15,11 +15,13 @@
 @import '_03-layout/to-delete';
 
 @import
+  '_03-layout/archive',
   '_03-layout/navigation',
   '_03-layout/header',
   '_03-layout/footer',
   '_03-layout/forms',
-  '_03-layout/project';
+  '_03-layout/project',
+  '_03-layout/single-blog';
 
 @import
   '_02-components/angles',
@@ -37,6 +39,7 @@
   '_02-components/margin',
   '_02-components/section--footer-contact',
   '_02-components/section--social-icons',
+  '_02-components/section--share',
   '_02-components/spacing';
 
 @import

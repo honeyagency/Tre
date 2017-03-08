@@ -2,6 +2,8 @@
 
 .icon-burger { background-image: url('app/icons/burger.png'); background-repeat: no-repeat; }
 
+.icon-envelope-small { background-image: url('app/icons/envelope-small.png'); background-repeat: no-repeat; }
+
 .icon-envelope { background-image: url('app/icons/envelope.png'); background-repeat: no-repeat; }
 
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }

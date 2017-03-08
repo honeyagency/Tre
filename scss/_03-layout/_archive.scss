@@ -1,0 +1,40 @@
+.section--blog-grid {
+    margin-bottom: 7em !important;
+
+    .bg--color {
+        &:nth-of-type(even) {
+            @extend .bg--pink;
+        }
+
+        &:nth-of-type(odd) {
+            @extend .bg--black;
+        }
+    }
+
+    .block--project {
+        display: block;
+
+        @include media($screen-sm) {
+            min-height: 330px;
+        }
+
+
+        .project--meta {
+            left: 1.6em;
+            bottom: 1.8em;
+        }
+
+        @include media($max-sm) {
+            max-height: 250px;
+
+            img {
+                top: 0;
+                left: 50%;
+                width: auto;
+                height: 250px;
+                margin: 0 auto;
+                max-width: none;
+            }
+        }
+    }
+}
