@@ -33,4 +33,12 @@
             display: block;
         }
     }
+
+    .blog-author {
+        @include media($screen-sm) {
+            position: sticky;
+            top: 1em;
+            right: 0;
+        }
+    }
 }
