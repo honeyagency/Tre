@@ -28,5 +28,8 @@ if (is_page('home')) {
     $context['home'] = prepareHomepageFields();
 } elseif (is_page('projects')) {
     $context['projects'] = getCustomPosts('project', -0, null, 'date', null, null);
+} elseif (is_page('services')) {
+    $context['services'] = prepareServicesPage();
 }
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

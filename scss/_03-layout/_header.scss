@@ -16,4 +16,25 @@ header {
         position: absolute;
         z-index: 3;
     }
+
+    &.bg--pink {
+        height: 31vh;
+        margin-bottom: 3em;
+
+        @include media($screen-sm) {
+            height: 62vh;
+            margin-bottom: 7em;
+        }
+
+
+        .vertical--center {
+            top: 60%;
+        }
+    }
+
+    &.bg--image {
+        @include media($screen-sm) {
+            margin-bottom: 2em;
+        }
+    }
 }

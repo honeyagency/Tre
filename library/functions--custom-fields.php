@@ -147,3 +147,18 @@ function prepareOptionsPage()
     );
     return $section;
 }
+function prepareServicesPage()
+{
+    if (have_rows('field_58c09ce844470')) {
+        $services = array();
+        while (have_rows('field_58c09ce844470')) {
+            the_row();
+            $services[] = array(
+                'title'   => get_sub_field('field_58c09d014fc69'),
+                'content' => get_sub_field('field_58c09d0d4fc6a'),
+                'details' => get_sub_field('field_58c09d2b4fc6b'),
+            );
+        }
+    }
+    return $services;
+}

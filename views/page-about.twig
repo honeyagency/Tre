@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+{% block content %}
+	<article class="post-type-{{post.post_type}} " id="post-{{post.ID}}">
+		<section class="header--bg block--angle angle--right after grid--one {% if post.thumbnail  != null %}bg--image{% else %}bg--pink{% endif %}">
+			{% if post.thumbnail  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
+			<div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
+				<h1 class="color--white line--short">{{post.title}}</h1>
+			</div>
+		</section>
+		<section class="flex flex--wrap spacing--vert-3 spacing--gutter max-wrap margin-center justify--between align--items-baseline">
+			<div class="grid--one grid--sm-two-thirds column--md-2">
+				{{post.content}}
+			</div>
+			<div class="grid--fifth">
+				{% include 'components/sections/section--social-icons.twig' %}
+			</div>
+		</section>
+	</article>
+{% endblock %}
