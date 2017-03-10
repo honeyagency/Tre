@@ -4,9 +4,9 @@
 
 		<section class="header--bg block--angle angle--right after grid--one {% if post._thumbnail_id  != null %}bg--image{% else %}bg--pink{% endif %}">
 			{% if post._thumbnail_id  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
-			<div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
+			{# <div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
 				<h1 class="color--white line--short">{{post.title}}</h1>
-			</div>
+			</div> #}
 		</section>
 		<div class="blog-author grid--sm-fourth">
 			<strong>{{ post.author.first_name }} {{post.author.last_name}} </strong><br>
@@ -17,6 +17,7 @@
 				<p class="font--smaller">{{post.author.short_biography}}</p> #}
 		</div>
 		<section class="article-content">
+			<h1 class="color--pink title--stack">{{post.title}}</h1>
 			{{post.content}}
 		</section>
 	</article>

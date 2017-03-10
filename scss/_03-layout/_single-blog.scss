@@ -35,7 +35,7 @@
     }
 
     .blog-author {
-        @include media($screen-sm) {
+        @include media($screen-lg) {
             position: sticky;
             top: 1em;
             right: 0;

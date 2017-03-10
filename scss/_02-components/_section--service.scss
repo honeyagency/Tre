@@ -1,12 +1,24 @@
-.section--service{
-	.block--project{
-		display: block;
-		width: 100%;
-		margin-bottom: -100%;
-		img{
-			position: absolute;
-			height: 100%;
-			max-width: none;
-		}
-	}
+.section--service {
+    .block--project {
+        display: block;
+        width: 100%;
+        margin-bottom: -100%;
+
+        img {
+            position: absolute;
+            height: 100%;
+            max-width: none;
+        }
+    }
+
+    .block--service {
+        // p {
+        //     &:first-of-type {
+        //         column-span: all;
+        //         font-size: 1.1em;
+        //         // padding-bottom: 1em;
+        //         // border-bottom: 1px solid map-get($gray, buttons);
+        //     }
+        // }
+    }
 }

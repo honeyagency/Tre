@@ -1,0 +1,8 @@
+.section--about{
+	p{
+		&:first-of-type{
+			column-span:all;
+			font-size: 1.2em;
+		}
+	}
+}

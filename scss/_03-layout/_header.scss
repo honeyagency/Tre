@@ -34,7 +34,7 @@ header {
 
     &.bg--image {
         @include media($screen-sm) {
-            margin-bottom: 2em;
+            margin-bottom: 4em;
         }
     }
 }
