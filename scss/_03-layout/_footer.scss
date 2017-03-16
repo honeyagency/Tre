@@ -56,4 +56,23 @@ footer {
             position: relative;
         }
     }
+
+
+    .email--signup {
+        input {
+            background-color: map-get($pink, main);
+            border: none;
+        }
+
+        .icon-envelope {
+            background-color: transparent;
+            position: absolute;
+            top: 0px;
+            background-position: center;
+            padding: 0 2em;
+            height: 30px;
+            right: 18px;
+            background-size: 50%;
+        }
+    }
 }

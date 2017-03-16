@@ -4,6 +4,8 @@
     &.angle--right {
         img {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            -moz-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         &.after {
@@ -43,6 +45,8 @@
     &.angle--left {
         img {
             clip-path: polygon(0 0, 100% 85%, 100% 0, 0 100%);
+            -webkit-clip-path: polygon(0 0, 100% 85%, 100% 0, 0 100%);
+            -moz-clip-path: polygon(0 0, 100% 85%, 100% 0, 0 100%);
         }
 
         &.after {
@@ -163,9 +167,13 @@
 @keyframes angles {
     0% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     100% {
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        -moz-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 }

@@ -1,3 +1,4 @@
+var module;
 module.exports = function(grunt) {
     grunt.initConfig({
         conf: {
@@ -168,4 +169,4 @@ module.exports = function(grunt) {
     grunt.registerTask('icons', ['svgmin', 'grunticon', 'clean', 'copy']);
     grunt.registerTask('server', ['uglify', 'sass', 'cssnano', 'svgmin', 'grunticon', 'clean', 'copy']);
     grunt.task.run('notify_hooks');
-}
+};

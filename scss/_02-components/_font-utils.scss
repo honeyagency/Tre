@@ -117,12 +117,13 @@
     column-span: all;
 
     @include media($screen-sm) {
-        margin: 0px 0 -28px -20px;
+        margin: 0px 0 -28px -15px;
         top: -16px;
     }
 
 
-    @include media($screen-md) {
+    @include media($screen-lg) {
+        margin: 0px 0 -28px -20px;
         line-height: 0.8;
         font-size: 2.5em;
     }

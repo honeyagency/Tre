@@ -15,6 +15,10 @@ header {
     .block--content {
         position: absolute;
         z-index: 3;
+
+        @include media($screen-xl) {
+            margin-left: calc((100vw - 1400px) / 2 );
+        }
     }
 
     &.bg--pink {

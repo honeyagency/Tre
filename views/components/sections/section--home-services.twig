@@ -1,11 +1,11 @@
 <section class="spacing--vert-1 spacing--dsk-vert-3 block--angle angle--right after bg--white">
 	<div class="max-wrap margin-center">
 		<h3 class="grid--one text--center font--display font--light">{{home.services.title}} <hr class="color--pink"></h3>
-		<div class="flex flex--wrap justify--between spacing--vert-1 spacing--dsk-vert-3 spacing--gutter">
+		<div class="flex flex--wrap justify--between spacing--vert-1 spacing--dsk-vert-3 spacing--dsk-horiz-3">
 			{% for service in home.services.services %}
-				<div class="grid--one grid--sm-half grid--md-fourth">
-					<h3 class="title--stack color--pink">{{service.title}}</h3>
-					<div class="spacing--dsk-horiz-2">{{service.description}}</div>
+				<div class="grid--one grid--sm-half grid--lg-fourth margin--bot-1">
+					<h3 class="title--stack color--pink">{{service.title|split(' ', 2)[0]}}<br>{{service.title|split(' ', 2)[1]}}</h3>
+					<div class="spacing--right-2">{{service.description}}</div>
 				</div>
 			{% endfor %}
 		</div>
