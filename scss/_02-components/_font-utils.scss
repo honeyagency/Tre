@@ -14,7 +14,7 @@
 
 .font--acumin {
     font-family: $heading-font-family;
-    font-size: 1.1em;
+
 }
 
 .font--thin, .font--light {
@@ -26,7 +26,7 @@
 }
 
 .font--semi-bold {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .font--bold {
@@ -102,6 +102,7 @@
         column-gap: 1.6em;
     }
 }
+
 .column--md-2 {
     @include media($screen-md) {
         column-count: 2;
@@ -109,12 +110,12 @@
     }
 }
 
-
 .title--stack {
     font-size: 2em;
     line-height: 0.8;
-    margin: 0px 0px -10px 0px;
+    margin: 0px 0px -10px 10px;
     column-span: all;
+
 
     @include media($screen-sm) {
         margin: 0px 0 -28px -15px;

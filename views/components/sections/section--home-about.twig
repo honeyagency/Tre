@@ -1,5 +1,5 @@
-<section class="section--home-about spacing--vert-3 bg-image block--angle angle--right" {% if home.who.image != null %}style="background-image:url('{{home.who.image}}')"{% endif %}>
-<div class="block--about-details color--white">
+<section class="section--home-about spacing--vert-3 bg-image block--angle angle--right bg--black" {% if home.who.image != null %}style="background-image:url('{{home.who.image}}')"{% endif %}>
+<div class="block--about-details color--white spacing--gutter-mob">
 	<h2 class="color--pink">{{home.who.title}}</h2>
 	<p>{{home.who.description}}</p>
 	<a class="button color--gray-button" href="{{home.who.button_url.0.guid}}">{{home.who.button_title}}</a>

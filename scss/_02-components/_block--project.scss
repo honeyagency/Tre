@@ -97,3 +97,15 @@
         }
     }
 }
+
+.wf-loading {
+    .project--meta {
+        bottom: 1em;
+        transition: bottom 2s $base-cubic;
+
+        h2 {
+            font-size: 2.1em;
+            line-height: 1.8;
+        }
+    }
+}

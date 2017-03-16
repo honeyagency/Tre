@@ -4,7 +4,7 @@
 		{% for service in services %}
 			<section class="section--service flex flex--wrap justify--around spacing--gutter spacing--vert-2 max-wrap margin-center align--items-baseline">
 				<div class="block--service grid--one grid--sm-half  column--md-2">
-					<h3 class="title--stack color--pink">{{service.title}}</h3>
+					<h3 class="title--stack color--pink">{{service.title|split(' ', 2)[0]}}<br>{{service.title|split(' ', 2)[1]}}</h3>
 					{{service.content}}
 				</div>
 				<div class="grid--one grid--sm-third ">

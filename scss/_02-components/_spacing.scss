@@ -31,7 +31,7 @@
 .spacing--bot-6{
 	padding-bottom: 6em;
 }
-.spacing--gutter-mob{
+.spacing--gutter-mob {
 
 @include media($max-sm) {
 	padding-right: 20px;
@@ -56,3 +56,18 @@
 .spacing--right-2 {
 	padding-right: 2em;
 }
+
+.spacing--mob-vert-1 {@include media( $max-sm ){padding-top:(1 * $h6);padding-bottom:(1 * $h6);};}
+.spacing--mob-vert-2 {@include media( $max-sm ){padding-top:(1.35em);padding-bottom:(1.35em);};}
+.spacing--mob-vert-3 {@include media( $max-sm ){padding-top:(3 * $h4);padding-bottom:(3 * $h4);};}
+.spacing--mob-vert-4 {@include media( $max-sm ){padding-top:(4 * $h3);padding-bottom:(4 * $h3);};}
+.spacing--mob-vert-5 {@include media( $max-sm ){padding-top:(5 * $h2);padding-bottom:(5 * $h2);};}
+.spacing--mob-vert-6 {@include media( $max-sm ){padding-top:(6 * $h1);padding-bottom:(6 * $h1);};}
+
+
+.spacing--mob-horiz-1 {@include media( $max-sm ){padding-left:(1 * $h6);padding-right:(1 * $h6);};}
+.spacing--mob-horiz-2 {@include media( $max-sm ){padding-left:(2 * $h5);padding-right:(2 * $h5);};}
+.spacing--mob-horiz-3 {@include media( $max-sm ){padding-left:(3 * $h4);padding-right:(3 * $h4);};}
+.spacing--mob-horiz-4 {@include media( $max-sm ){padding-left:(4 * $h3);padding-right:(4 * $h3);};}
+.spacing--mob-horiz-5 {@include media( $max-sm ){padding-left:(5 * $h2);padding-right:(5 * $h2);};}
+.spacing--mob-horiz-6 {@include media( $max-sm ){padding-left:(6 * $h1);padding-right:(6 * $h1);};}

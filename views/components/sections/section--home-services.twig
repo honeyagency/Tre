@@ -5,7 +5,7 @@
 			{% for service in home.services.services %}
 				<div class="grid--one grid--sm-half grid--lg-fourth margin--bot-1">
 					<h3 class="title--stack color--pink">{{service.title|split(' ', 2)[0]}}<br>{{service.title|split(' ', 2)[1]}}</h3>
-					<div class="spacing--right-2">{{service.description}}</div>
+					<div class="spacing--right-2 spacing--gutter-mob">{{service.description}}</div>
 				</div>
 			{% endfor %}
 		</div>

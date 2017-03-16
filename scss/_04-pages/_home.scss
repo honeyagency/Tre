@@ -1,4 +1,5 @@
 .section--home-about {
+    background-position: bottom;
     background-size: 100%;
 
     .block--about-details {
@@ -8,16 +9,14 @@
         }
     }
 
-    padding-top: 20vh;
-    padding-bottom: 45vh;
-
-    @include media($screen-xs) {}
-
+    padding-top: 28vh;
+    padding-bottom: 56vh;
 
     @include media($screen-sm) {}
 
 
     @include media($screen-md) {
+        background-position: center;
         padding-top: 30vh;
         padding-bottom: 50vh;
 
@@ -25,10 +24,4 @@
             margin-left: 25%;
         }
     }
-
-
-    @include media($screen-lg) {}
-
-
-    @include media($screen-xl) {}
 }
