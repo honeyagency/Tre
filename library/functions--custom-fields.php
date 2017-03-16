@@ -51,13 +51,14 @@ function prepareProjectFields($postId = null)
     );
 
     $section = array(
-        'date'       => get_field('field_58b0c0bb0d46c', $postId),
-        'grid_image' => $gridImage,
-        'content'    => get_field('field_58b0c1100d470', $postId),
-        'details'    => $details,
-        'external'   => $external,
-        'featured'   => $galleryFeat,
-        'gallery'    => $galleryArray,
+        'date'           => get_field('field_58b0c0bb0d46c', $postId),
+        'featured'       => get_field('field_58c70e36e26b5', $postId),
+        'grid_image'     => $gridImage,
+        'content'        => get_field('field_58b0c1100d470', $postId),
+        'details'        => $details,
+        'external'       => $external,
+        'galleryfeature' => $galleryFeat,
+        'gallery'        => $galleryArray,
     );
     return $section;
 }
@@ -153,12 +154,45 @@ function prepareServicesPage()
         $services = array();
         while (have_rows('field_58c09ce844470')) {
             the_row();
+            $projectId = get_sub_field('field_58cad51b87701');
+            if ($projectId == null) {
+                $project = null;
+            } else {
+                $project = getSinglePost("project", $projectId);
+            }
             $services[] = array(
                 'title'   => get_sub_field('field_58c09d014fc69'),
                 'content' => get_sub_field('field_58c09d0d4fc6a'),
                 'details' => get_sub_field('field_58c09d2b4fc6b'),
+                'project' => $project,
             );
         }
     }
     return $services;
+}
+function prepareAboutPage()
+{
+    if (have_rows('field_58cada12807de')) {
+        $team = array();
+        while (have_rows('field_58cada12807de')) {
+            the_row();
+            $imageId = get_sub_field('field_58cada32807e1');
+            if ($imageId != null) {
+                $image = new TimberImage($imageId);
+            } else {
+                $image = null;
+            }
+            $team[] = array(
+                'name'      => get_sub_field('field_58cada27807df'),
+                'title'     => get_sub_field('field_58cada2b807e0'),
+                'image'     => $image,
+                'biography' => get_sub_field('field_58cada3a807e2'),
+            );
+        }
+    }
+    $about = array(
+        'quote' => get_field('field_58cadd3d0e0a3'),
+        'team'  => $team,
+    );
+    return $about;
 }

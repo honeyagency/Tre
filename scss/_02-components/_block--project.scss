@@ -3,9 +3,12 @@
     min-height: 250px;
     margin-bottom: 1em;
     overflow: hidden;
+    display: block;
+    max-height: 70vh;
 
     img {
         margin-bottom: -10px;
+        width: 100%;
     }
 
     .project--meta {

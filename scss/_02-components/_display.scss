@@ -13,7 +13,8 @@
 .flex--column {
     flex-direction: column;
 }
-.flex--row-reverse{
+
+.flex--row-reverse {
     flex-direction: row-reverse;
 }
 
@@ -45,12 +46,20 @@
     align-items: start;
 }
 
+.align--self-start {
+    align-self: flex-start;
+}
+
 .margin-center {
     margin: 0 auto;
 }
 
 .block {
     display: block;
+}
+
+.inline--block {
+    display: inline-block;
 }
 
 .table {
@@ -90,5 +99,11 @@ h1, h2, h3, h4, h5, h6 {
 
     + br {
         display: none !important;
+    }
+}
+
+.order--dsk-2 {
+    @include media($screen-sm) {
+        order: 2;
     }
 }

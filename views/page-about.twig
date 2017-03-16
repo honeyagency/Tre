@@ -13,27 +13,23 @@
 			{{post.content}}
 		</div>
 		<div class="grid--fifth">
-			{# {% include 'components/sections/section--social-icons.twig' %} #}
 		</div>
-		<div class="grid--one bg--pink spacing--vert-6 text--center color--white" >
-			<h2 class="font--display">This is one perfect quote</h2>
-			{# <img src="http://placekitten.com/g/2000/1000"> #}
-			{# <hr class="color--gray"> #}
-		</div>
-		<div class="grid--half spacing--vert-3">
-			<h3 class="color--pink title--stack">Tre Borden</h3>
-			<p><strong>Tre Borden is a California-based placemaking consultant and producer.</strong>&nbsp;Tre seeks out collaborative projects based in the visual arts, fashion, hospitality and entertainment industries.</p>
-			<p>After graduating from Yale College, Tre honed his sense of style and flair in NYC, where he launched a tailoring company that linked college students and east-Asian tailors and had stints at New York Magazine, Oscar De La Renta and DIESEL.</p>
-			<p>Tre returned to California and completed his MBA at the UCD Graduate School of Management, focusing on entrepreneurship and clean-technology. Tre reconnected with his childhood friend, artist Danny Scheible, and decided to return to his creative and entrepreneurial roots, co-founding Tapigami, a new art form developed by Scheible. Together they brought the innovative tape-based art to venues such as Maker Faire, The W San Francisco, The California Museum, and to a successful Kickstarter funded project for Tapigami-Hacker Glasses in 2013. Tre also helped launch FLYWHEEL, a business incubator for creative talent in Sacramento in spring 2012.</p>
-			<p>Most recently,&nbsp;Tre has brought his relationships with local artists and eye for placemaking as the curator of the Warehouse Artist Lofts, a new mixed-use housing project which houses over 200 local creatives and features two dozen permanent, site-specific installations including two from LC Studio Tutto. &nbsp;He is also the Co-Producer and Project Manager for <a href="http://treborden.com/about/www.portalsac.com">PORTAL</a>, a temporary activation of the R Street block adjacent to the IceHouse development site.</p>
-			<p>Tre is excited to build upon these experiences as he continues to work on several innovative projects including his most recent collaboration <a href="http://treborden.com/about/www.brightunderbelly.com">Bright Underbelly</a>.</p>
-		</div>
-
-		<div class="grid--third">
-			<div>t</div>
-			<img src="http://placekitten.com/g/800/600" width="400" alt="">
-			{# {% include 'components/sections/section--social-icons.twig' %} #}
-		</div>
+		{% if about.quote %}
+			<div class="margin--bot-5 grid--one bg--pink spacing--vert-6 text--center color--white">
+				<h2 class="font--display">{{about.quote}}</h2>
+			</div>
+		{% endif %}
+		{% for member in about.team %}
+			{% if member.image %}
+				<div class="grid--one grid--sm-third align--self-start order--dsk-2">
+					<img src="{{member.image|resize(800)}}" width="400" alt="{{member.name}}">
+				</div>
+			{% endif %}
+			<div class="grid--one grid--sm-half">
+				<h3 class="color--pink title--stack">{{member.name}}</h3>
+				{{member.biography}}
+			</div>
+		{% endfor %}
 	</section>
 </article>
 {% endblock %}

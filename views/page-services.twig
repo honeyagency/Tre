@@ -8,18 +8,19 @@
 					{{service.content}}
 				</div>
 				<div class="grid--one grid--sm-third ">
-					{% set project = home.header.featured_project %}
-					<a class="block--project bg--black bg-image" href="{{project.link}}" style="background-image:url('{{project.postinfo.grid_image|resize(1304)}}')">
-						<div class="project--meta">
-							<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date|date('Y')}}</span></h2>
-							<div class="block--categories color--pink font--display text--right">
-								<hr class="color--pink">{% for category in project.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}
+					{% if service.project %}
+						{% set project = service.project %}
+						<a class="block--project bg--black bg-image" href="{{project.link}}" style="background-image:url('{{project.postinfo.grid_image|resize(1304)}}')">
+							<div class="project--meta">
+								<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date|date('Y')}}</span></h2>
+								<div class="block--categories color--pink font--display text--right">
+									<hr class="color--pink">{% for category in project.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}
+								</div>
 							</div>
-						</div>
-					</a>
-					{# {{service.details}} #}
+						</a>
+					{% endif %}
 				</div>
-			<section class="bg--pink spacing--vert-4 grid--one color--white spacing--gutter grid-- text--center"></section>
+			<section class="margin--top-1 bg--pink spacing--vert-4 grid--one color--white spacing--gutter grid-- text--center"></section>
 		</section>
 	{% endfor %}
 	

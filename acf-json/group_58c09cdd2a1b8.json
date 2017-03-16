@@ -77,6 +77,33 @@
                     "media_upload": 1,
                     "default_value": "",
                     "delay": 0
+                },
+                {
+                    "key": "field_58cad51b87701",
+                    "label": "Featured Project",
+                    "name": "featured_project",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "project"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "elements": "",
+                    "min": "",
+                    "max": 1,
+                    "return_format": "id"
                 }
             ]
         }
@@ -95,8 +122,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1489018735
+    "modified": 1489688099
 }

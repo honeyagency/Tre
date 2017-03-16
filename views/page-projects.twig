@@ -2,16 +2,29 @@
 {% block content %}
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<section class="section--project-grid flex flex--wrap max-wrap margin-center spacing--gutter spacing--vert-2 justify--between align--items-start">
+			{% for project in projects %}
+				{% if project.postinfo.featured == true %}
+					<div class="grid--one">
+						{% include 'components/blocks/block--project.twig' %}
+					</div>
+				{% endif %}
+			{% endfor %}
+
 			{% set fullLoop = projects|length %}
 			{% set halfLoop = fullLoop / 2 %}
+			
 			<div class="grid--one grid--sm-half flex flex--wrap flex--column">
 				{% for project in projects|slice(0,halfLoop) %}
-					{% include 'components/blocks/block--project.twig' %}
+					{% if project.postinfo.featured != true %}
+						{% include 'components/blocks/block--project.twig' %}
+					{% endif %}
 				{% endfor %}
 			</div>
 			<div class="grid--one grid--sm-half flex flex--wrap flex--column">
 				{% for project in projects|slice(halfLoop,fullLoop) %}
-					{% include 'components/blocks/block--project.twig' %}
+					{% if project.postinfo.featured != true %}
+						{% include 'components/blocks/block--project.twig' %}
+					{% endif %}
 				{% endfor %}
 			</div>
 		</section>

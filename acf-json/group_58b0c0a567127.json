@@ -27,13 +27,32 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
             "display_format": "Y",
             "return_format": "Ymd",
             "first_day": 1
+        },
+        {
+            "key": "field_58c70e36e26b5",
+            "label": "Featured?",
+            "name": "featured",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_58b0c0f20d46e",
@@ -44,12 +63,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "60",
                 "class": "",
                 "id": ""
             },
             "return_format": "id",
-            "preview_size": "thumbnail",
+            "preview_size": "full",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -333,5 +352,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1488829434
+    "modified": 1489440372
 }

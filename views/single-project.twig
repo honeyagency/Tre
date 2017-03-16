@@ -29,11 +29,11 @@
 			{% endif %}
 		</section>
 		<section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between">
-			<div class="block--gallery-featured grid--one type--{{project.featured.type}}">
-				{% if project.featured.type == 'image' %}
-					<img src="{{project.featured.image}}" style="width:100%;">
+			<div class="block--gallery-featured grid--one type--{{project.galleryfeature.type}}">
+				{% if project.galleryfeature.type == 'image' %}
+					<img src="{{project.galleryfeature.image}}" style="width:100%;">
 				{% else %}
-					{{project.featured.video}}
+					{{project.galleryfeature.video}}
 				{% endif %}
 			</div>
 			<div class="block--gallery-left grid--one grid--sm-half spacing--dsk-vert-2">
