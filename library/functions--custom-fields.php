@@ -172,6 +172,12 @@ function prepareServicesPage()
 }
 function prepareAboutPage()
 {
+    $content = array(
+        'title'   => get_field('field_58cb27ceda6a3'),
+        'content' => get_field('field_58cb27e2da6a4'),
+        'quote'   => get_field('field_58cadd3d0e0a3'),
+
+    );
     if (have_rows('field_58cada12807de')) {
         $team = array();
         while (have_rows('field_58cada12807de')) {
@@ -191,7 +197,7 @@ function prepareAboutPage()
         }
     }
     $about = array(
-        'quote' => get_field('field_58cadd3d0e0a3'),
+        'content' => $content,
         'team'  => $team,
     );
     return $about;
