@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
-	<article class="post-type-{{post.post_type}} spacing--vert-3" id="post-{{post.ID}}">
+	<main role="main" class="content-wrapper border--top color--gray">
+	<article class="post-type-{{post.post_type}} spacing--vert-3 color--black" id="post-{{post.ID}}">
 		{% for service in services %}
 			<section class="section--service flex flex--wrap justify--around spacing--gutter spacing--vert-2 max-wrap margin-center align--items-baseline">
 				<div class="block--service grid--one grid--sm-half  column--md-2">
@@ -26,4 +27,5 @@
 	
 </article>
 {% include 'components/sections/section--footer-contact.twig' %}
+</main>
 {% endblock %}

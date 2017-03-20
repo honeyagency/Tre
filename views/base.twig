@@ -5,27 +5,25 @@
 </head>
 {% endblock %}
 <body class="{{body_class}}" data-template="base.twig">
-<header class="header color--gray border--bottom spacing--vert-2">
+<header class="header color--gray spacing--vert-2">
 	<div class="max-wrap margin-center spacing--gutter flex flex--wrap justify--between align--items-center">
-	{% block header %}
-		<a class="hdr-logo-link" href="/" rel="home" title="{{site.name}}"><i class="icon-logo" data-grunticon-embed></i></a>
-		<i class="hidden--dsk icon-burger" data-grunticon-embed></i>
-		{% include 'components/navigation.twig' %}
-	{% endblock %}
-</header>
-{# {% block social %}
-{% include 'components/blocks/block--soical-tab.twig' %}
-{% endblock %} #}
-<main role="main" class="content-wrapper">
-	{% if title %}<h1>{{title}}</h1>{% endif %}
-		{% block content %}
-			Sorry, no content
+		{% block header %}
+			<a class="hdr-logo-link" href="/" rel="home" title="{{site.name}}"><i class="icon-logo" data-grunticon-embed></i></a>
+			<i class="hidden--dsk icon-burger" data-grunticon-embed></i>
+			{% include 'components/navigation.twig' %}
 		{% endblock %}
-</main>
-
-{% block footer %}
-	{% include 'footer.twig' %}
-	{{ function('wp_footer') }}
-{% endblock %}
+	</header>
+	{# {% block social %}
+		{% include 'components/blocks/block--soical-tab.twig' %}
+	{% endblock %} #}
+	{% block content %}
+		<main role="main" class="content-wrapper">
+		Sorry, no content
+		</main>
+	{% endblock %}
+	{% block footer %}
+		{% include 'footer.twig' %}
+		{{ function('wp_footer') }}
+	{% endblock %}
 </body>
 </html>

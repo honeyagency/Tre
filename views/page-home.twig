@@ -1,9 +1,11 @@
 {% extends "base.twig" %}
 {% block content %}
+	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		{% include 'components/sections/section--home-header.twig' %}
 		{% include 'components/sections/section--home-services.twig' %}
 		{% include 'components/sections/section--home-about.twig' %}
 		{% include 'components/sections/section--footer-contact.twig' %}
 	</article>
+</main>
 {% endblock %}

@@ -1,5 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
+	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<section class="header--bg block--angle angle--right after">
 			<img src="{{project.grid_image|resize(1920, 1080)}}" width="100%" alt="" class="">
@@ -76,4 +77,5 @@
 				</div>
 			</section>
 		</article>
+	</main>
 	{% endblock %}

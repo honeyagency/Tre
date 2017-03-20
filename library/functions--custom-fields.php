@@ -163,7 +163,6 @@ function prepareServicesPage()
             $services[] = array(
                 'title'   => get_sub_field('field_58c09d014fc69'),
                 'content' => get_sub_field('field_58c09d0d4fc6a'),
-                'details' => get_sub_field('field_58c09d2b4fc6b'),
                 'project' => $project,
             );
         }

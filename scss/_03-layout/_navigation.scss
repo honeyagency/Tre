@@ -8,10 +8,17 @@ nav {
 
         li {
             display: inline-block;
+            
 
             &.current-menu-item {
                 a {
-                    color: map-get($pink, main);
+                    color: white;
+
+
+                    @include media($screen-sm) {
+                        color: map-get($pink, main);
+                        font-style: normal;
+                    }
                 }
             }
         }
@@ -39,6 +46,7 @@ nav {
             li {
                 display: block;
                 padding: .5em 0;
+                margin:0;
 
                 a {
                     font-size: 1.7em !important;
@@ -101,7 +109,6 @@ nav {
             left: 0;
             right: 0;
             background-color: white;
-            z-index: 999;
             height: 100vh;
             opacity: 0;
             transition: opacity 0.3s $base-cubic;
@@ -116,6 +123,7 @@ nav {
         &:after {
             transition: opacity 0.3s $base-cubic;
             opacity: 1;
+            z-index: 999;
         }
 
         header.header {

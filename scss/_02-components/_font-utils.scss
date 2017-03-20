@@ -14,7 +14,6 @@
 
 .font--acumin {
     font-family: $heading-font-family;
-
 }
 
 .font--thin, .font--light {
@@ -116,7 +115,6 @@
     margin: 0px 0px -10px 10px;
     column-span: all;
 
-
     @include media($screen-sm) {
         margin: 0px 0 -28px -15px;
         top: -16px;
@@ -137,5 +135,13 @@
     + * {
         position: relative;
         z-index: 2;
+    }
+}
+
+.spacing--gutter {
+    @include media($max-sm) {
+        .title--stack {
+            margin-left: 0 !important;
+        }
     }
 }

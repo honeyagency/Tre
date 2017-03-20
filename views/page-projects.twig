@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
-	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+	<main role="main" class="content-wrapper color--gray border--top">
+	<article class="post-type-{{post.post_type}} color--black" id="post-{{post.ID}}">
 		<section class="section--project-grid flex flex--wrap max-wrap margin-center spacing--gutter spacing--vert-2 justify--between align--items-start">
 			{% for project in projects %}
 				{% if project.postinfo.featured == true %}
@@ -30,4 +31,5 @@
 		</section>
 	</article>
 	{% include 'components/sections/section--footer-contact.twig' %}
+</main>
 {% endblock %}
