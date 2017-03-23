@@ -35,4 +35,19 @@
             border-color: map-get($black, main);
         }
     }
+
+    &.color--black {
+        background: linear-gradient(to bottom, transparent 0%, transparent 50%, white 50%, white 100%);
+        background-position-y: -5%;
+        background-size: 200%;
+        background-repeat: no-repeat;
+        transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic;
+        color: map-get($black, main);
+
+        &:hover {
+            transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic;
+            background-position-y: 100%;
+            border-color: white;
+        }
+    }
 }

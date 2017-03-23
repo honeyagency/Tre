@@ -26,6 +26,13 @@
 header {
     z-index: 9999;
     position: relative;
+
+    &.header {
+        @include media($max-sm) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
 }
 
 .header--bg {
@@ -47,7 +54,7 @@ header {
     }
 
     &.bg--pink {
-        height: 31vh;
+        height: 25vh;
         margin-bottom: 3em;
 
         @include media($screen-sm) {

@@ -42,12 +42,13 @@ h1 {
 }
 
 h2 {
-    font-size: $h2;
+    font-size: 2em;
+    line-height: 1;
     letter-spacing: 1.7px;
 }
 
 h3 {
-    font-size: 0.85em;
+    font-size: 1.25em;
     letter-spacing: 1.6px;
 }
 
@@ -69,13 +70,14 @@ h6 {
 @include media(min-width $screen-xs) {
     h1 {
         font-size: 5em;
+        margin-bottom: 0.4em;
     }
 }
 
 
 @include media(min-width $screen-sm) {
     h1 {
-        font-size: $h1 * 2.775;
+        font-size: 6em;
     }
 
     h2 {

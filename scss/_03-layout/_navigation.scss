@@ -6,14 +6,25 @@ nav {
         list-style-type: none;
         margin: 0;
 
+        @media screen and (max-height: 420px) {
+            @media screen and (max-width: $screen-sm-max) {
+                width: 80%;
+                margin: 0 auto;
+                column-count: 2;
+
+                li {
+                    line-height: 2;
+                    padding: 0 !important;
+                }
+            }
+        }
+
         li {
             display: inline-block;
-            
 
             &.current-menu-item {
                 a {
                     color: white;
-
 
                     @include media($screen-sm) {
                         color: map-get($pink, main);
@@ -25,8 +36,8 @@ nav {
     }
 
     @include media($max-sm) {
-        transform: translateX(100%) translate3d(0, 0, 0);
-        -webkit-transform: translateX(100%) translate3d(0, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        -webkit-transform: translate3d(100%, 0, 0);
         will-change: top, transform;
         -webkit-will-change: top, transform;
         -webkit-backface-visibility: hidden;
@@ -46,7 +57,7 @@ nav {
             li {
                 display: block;
                 padding: .5em 0;
-                margin:0;
+                margin: 0;
 
                 a {
                     font-size: 1.7em !important;
@@ -82,22 +93,36 @@ nav {
             z-index: -1;
         }
 
-        transition: top 0.3s $base-cubic, transform 0.3s $base-cubic;
+        &.cananimate {
+            transition: top 0.2s $base-cubic, transform 0.2s $base-cubic;
+        }
     }
 }
 
 // Animations on open
 @include media($max-sm) {
     body.open {
+        position: fixed;
+
         nav {
-            transition: top 0.3s $base-cubic, transform 0.3s $base-cubic;
+            transition: top 0.2s $base-cubic, transform 0.2s $base-cubic;
             top: 100px;
-            transform: translateX(0%) translate3d(0, 0, 0);
-            -webkit-transform: translateX(0%) translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
             will-change: top, transform;
             -webkit-will-change: top, transform;
             -webkit-backface-visibility: hidden;
             -webkit-perspective: 1000;
+
+            // overflow: scroll;
+       
+        }
+
+        .header--bg {
+            img {
+                opacity: 0;
+                transition: opacity 0.3s $base-cubic;
+            }
         }
     }
 
@@ -115,7 +140,14 @@ nav {
         }
 
         header.header {
-            transition: border 0.3s $base-cubic;
+            transition: border 0.2s $base-cubic;
+        }
+
+        .header--bg {
+            img {
+                opacity: 1;
+                transition: opacity 0.3s $base-cubic;
+            }
         }
     }
 
@@ -127,7 +159,7 @@ nav {
         }
 
         header.header {
-            transition: border 0.3s $base-cubic;
+            transition: border 0.2s $base-cubic;
             border-color: transparent !important;
         }
     }

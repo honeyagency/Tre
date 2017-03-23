@@ -1,7 +1,13 @@
 .block--project {
     position: relative;
-    min-height: 250px;
-    margin-bottom: 1em;
+    margin-bottom: $mobile-spacing;
+
+    @include media($screen-sm) {
+        min-height: 250px;
+        margin-bottom: 1em;
+    }
+
+
     overflow: hidden;
     display: block;
     max-height: 70vh;
@@ -13,7 +19,13 @@
 
     .project--meta {
         position: absolute;
-        left: 1em;
+        left: 15px;
+
+        @include media($screen-sm) {
+            left: 1em;
+        }
+
+
         z-index: 9;
         bottom: 1.2em;
 
@@ -37,63 +49,75 @@
         top: -3.3em;
 
         hr {
-            will-change: transform;
-            transition: transform 0.3s $base-cubic;
-            transform: translateY(5px) translateX(-5em) rotate(-30deg) skewX(32deg);
-            width: 120px;
-            margin-right: -10px;
-        }
+            transform: translateY(35px) translateX(-6em) rotate(-60deg) skewX(32deg);
+            width: 70px;
 
-        transition: transform 0.3s $base-cubic;
-        will-change: transform;
-
-        .category {
-            will-change: transform;
-            display: block;
-            transition: transform 0.5s $base-cubic;
-            transform: translateY(1em);
-            position: relative;
-        }
-    }
-
-    &:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        background-color: map-get($black, main);
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.3s $base-cubic;
-    }
-
-    &:hover {
-        .block--categories {
-            transform: translateY(0em);
-            transition: transform 0.3s $base-cubic;
-
-            hr {
+            @include media($screen-sm) {
+                will-change: transform;
                 transition: transform 0.3s $base-cubic;
                 transform: translateY(5px) translateX(-5em) rotate(-60deg) skewX(32deg);
-            }
-
-            .category {
-                transform: translateY(0em);
-                transition: transform 0.5s $base-cubic;
-                position: relative;
-
-                &:last-of-type {
-                    transition-delay: .075s;
-                }
+                width: 120px;
+                margin-right: -10px;
             }
         }
 
+        .category {
+            display: block;
+            transform: translateY(1em);
+            position: relative;
+
+            @include media($screen-sm) {
+                will-change: transform;
+                transition: transform 0.5s $base-cubic;
+            }
+        }
+
+        @include media($screen-sm) {
+            transition: transform 0.3s $base-cubic;
+            will-change: transform;
+        }
+    }
+
+    @include media($screen-sm) {
         &:after {
-            opacity: .85;
+            content: ' ';
+            display: block;
+            position: absolute;
+            background-color: map-get($black, main);
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0;
             transition: opacity 0.3s $base-cubic;
+        }
+
+        &:hover {
+            .block--categories {
+                transform: translateY(0em);
+                transition: transform 0.3s $base-cubic;
+
+                hr {
+                    transition: transform 0.3s $base-cubic;
+                    transform: translateY(5px) translateX(-5em) rotate(-60deg) skewX(32deg);
+                }
+
+                .category {
+                    transform: translateY(0em);
+                    transition: transform 0.5s $base-cubic;
+                    position: relative;
+
+                    &:last-of-type {
+                        transition-delay: .075s;
+                    }
+                }
+            }
+
+            &:after {
+                opacity: .85;
+                transition: opacity 0.3s $base-cubic;
+            }
         }
     }
 }

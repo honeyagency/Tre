@@ -11,7 +11,7 @@
         &.after {
             &:after {
                 left: 0;
-                bottom: 0;
+                bottom: -4vw;
                 right: 0;
                 position: absolute;
                 background: inherit;
@@ -21,7 +21,6 @@
                 transform: skewY(-4deg);
                 transform-origin: bottom;
                 z-index: -1;
-                top: 60%;
             }
         }
 

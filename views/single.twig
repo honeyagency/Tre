@@ -3,7 +3,18 @@
 	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}} flex flex--wrap flex--row-reverse justify--around align--items-baseline" id="post-{{post.ID}}">
 		<section class="header--bg block--angle angle--right after grid--one {% if post._thumbnail_id  != null %}bg--image{% else %}bg--pink{% endif %}">
-		{% if post._thumbnail_id  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
+		{% if post._thumbnail_id  != null %}<img
+				data-original="{{post.thumbnail.src|resize(1280)}}"
+				alt="{{post.title}}"
+				data-original-set="
+				{{post.thumbnail.src|resize(640)}}  640w,
+				{{post.thumbnail.src|resize(750)}}  750w,
+				{{post.thumbnail.src|resize(1080)}} 1080w,
+				{{post.thumbnail.src|resize(1280)}} 1280w,
+				{{post.thumbnail.src|resize(1366)}} 1366w,
+				{{post.thumbnail.src|resize(1440)}} 1440w,
+				{{post.thumbnail.src|resize(1920)}} 1920w"
+				sizes="100vw">{% endif %}
 		{# <div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
 			<h1 class="color--white line--short">{{post.title}}</h1>
 		</div> #}

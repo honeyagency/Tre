@@ -5,7 +5,6 @@
 .spacing--vert-5 {padding-top:(5 * $h2);padding-bottom:(5 * $h2);}
 .spacing--vert-6 {padding-top:(6 * $h1);padding-bottom:(6 * $h1);}
 
-
 .spacing--horiz-1 {padding-left:(1 * $h6);padding-right:(1 * $h6);}
 .spacing--horiz-2 {padding-left:(2 * $h5);padding-right:(2 * $h5);}
 .spacing--horiz-3 {padding-left:(3 * $h4);padding-right:(3 * $h4);}
@@ -20,42 +19,12 @@
 .spacing--dsk-vert-5 {@include media( $screen-sm ){padding-top:(5 * $h2);padding-bottom:(5 * $h2);};}
 .spacing--dsk-vert-6 {@include media( $screen-sm ){padding-top:(6 * $h1);padding-bottom:(6 * $h1);};}
 
-
 .spacing--dsk-horiz-1 {@include media( $screen-sm ){padding-left:(1 * $h6);padding-right:(1 * $h6);};}
 .spacing--dsk-horiz-2 {@include media( $screen-sm ){padding-left:(2 * $h5);padding-right:(2 * $h5);};}
 .spacing--dsk-horiz-3 {@include media( $screen-sm ){padding-left:(3 * $h4);padding-right:(3 * $h4);};}
 .spacing--dsk-horiz-4 {@include media( $screen-sm ){padding-left:(4 * $h3);padding-right:(4 * $h3);};}
 .spacing--dsk-horiz-5 {@include media( $screen-sm ){padding-left:(5 * $h2);padding-right:(5 * $h2);};}
 .spacing--dsk-horiz-6 {@include media( $screen-sm ){padding-left:(6 * $h1);padding-right:(6 * $h1);};}
-
-.spacing--bot-6{
-	padding-bottom: 6em;
-}
-.spacing--gutter-mob {
-
-@include media($max-sm) {
-	padding-right: 20px;
-	padding-left:20px;
-}
-
-}
-.spacing--gutter{
-
-	padding-right: 1em;
-	padding-left:1em;
-
-	@include media($screen-md) {
-		padding-left:2em;
-		padding-right:2em;
-	}
-	
-}
-.spacing--right-1 {
-	padding-right: 1em;
-}
-.spacing--right-2 {
-	padding-right: 2em;
-}
 
 .spacing--mob-vert-1 {@include media( $max-sm ){padding-top:(1 * $h6);padding-bottom:(1 * $h6);};}
 .spacing--mob-vert-2 {@include media( $max-sm ){padding-top:(1.35em);padding-bottom:(1.35em);};}
@@ -64,10 +33,43 @@
 .spacing--mob-vert-5 {@include media( $max-sm ){padding-top:(5 * $h2);padding-bottom:(5 * $h2);};}
 .spacing--mob-vert-6 {@include media( $max-sm ){padding-top:(6 * $h1);padding-bottom:(6 * $h1);};}
 
-
 .spacing--mob-horiz-1 {@include media( $max-sm ){padding-left:(1 * $h6);padding-right:(1 * $h6);};}
 .spacing--mob-horiz-2 {@include media( $max-sm ){padding-left:(2 * $h5);padding-right:(2 * $h5);};}
 .spacing--mob-horiz-3 {@include media( $max-sm ){padding-left:(3 * $h4);padding-right:(3 * $h4);};}
 .spacing--mob-horiz-4 {@include media( $max-sm ){padding-left:(4 * $h3);padding-right:(4 * $h3);};}
 .spacing--mob-horiz-5 {@include media( $max-sm ){padding-left:(5 * $h2);padding-right:(5 * $h2);};}
 .spacing--mob-horiz-6 {@include media( $max-sm ){padding-left:(6 * $h1);padding-right:(6 * $h1);};}
+
+.spacing--bot-6 {
+    padding-bottom: 6em;
+}
+
+.spacing--gutter-mob {
+    @include media($max-sm) {
+        padding-right: $mobile-spacing;
+        padding-left: $mobile-spacing;
+    }
+}
+
+.spacing--gutter {
+    padding-right: $mobile-spacing;
+    padding-left: $mobile-spacing;
+
+    @include media($screen-sm) {
+        padding-right: 20px;
+        padding-left:20px;
+    }
+    
+    @include media($screen-md) {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+.spacing--right-1 {
+    padding-right: 1em;
+}
+
+.spacing--right-2 {
+    padding-right: 2em;
+}

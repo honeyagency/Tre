@@ -21,24 +21,55 @@
             }
         }
 
-        .block--gallery-right, .block--gallery-left {
+        // .block--gallery-right, .block--gallery-left {
+        //     img {
+        //         margin-bottom: $mobile-spacing;
+        //         display: block;
+
+        //         @include media($screen-sm) {
+        //             margin-bottom: 1em;
+        //         }
+        //     }
+        // }
+        .block--gallery {
+            column-count: 2;
+
             img {
-                margin-bottom: 1em;
+                margin: 0;
+                border-bottom: $mobile-spacing solid transparent;
+                display: block;
+
+                @include media($screen-sm) {
+                    border-bottom: 1em solid transparent;
+                }
             }
         }
     }
 
     .block--categories {
         position: relative;
-        right: 1em;
-        top: -3em;
-    
+        font-size: .8em;
+        right: $mobile-spacing;
+        top: $mobile-spacing * -1;
+
+        @include media($screen-sm) {
+            font-size: 1em;
+            top: -3em;
+            right: 1em;
+        }
+
 
         hr {
             float: right;
             clear: both;
             margin-top: -15px;
             margin-bottom: -15px;
+        }
+
+        @include media($max-sm) {
+            hr {
+                display: none;
+            }
         }
     }
 }
