@@ -115,7 +115,9 @@ nav {
             -webkit-perspective: 1000;
 
             // overflow: scroll;
-       
+            @media (prefers-reduced-motion) {
+                transition: none !important;
+            }
         }
 
         .header--bg {
@@ -137,6 +139,7 @@ nav {
             height: 100vh;
             opacity: 0;
             transition: opacity 0.3s $base-cubic;
+            z-index: -1;
         }
 
         header.header {

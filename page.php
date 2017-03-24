@@ -27,7 +27,16 @@ $context['post'] = $post;
 if (is_page('home')) {
     $context['home'] = prepareHomepageFields();
 } elseif (is_page('projects')) {
-    $context['projects'] = getCustomPosts('project', -0, null, 'date', null, null);
+    if (!empty($_GET["cat"])) {
+        $cat                   = $_GET["cat"];
+        if (is_numeric($cat)) {
+            $category = get_the_category_by_id($cat);
+        }
+        $context['currentCat'] = $category;
+    } else {
+        $cat = null;
+    }
+    $context['projects'] = getCustomPosts('project', -0, $cat, 'date', null, null);
 } elseif (is_page('services')) {
     $context['services'] = prepareServicesPage();
 } elseif (is_page('about')) {

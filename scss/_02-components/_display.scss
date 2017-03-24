@@ -102,6 +102,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.order--first {
+    order: -1;
+}
+
+.column--full {
+    column-span: all;
+}
+
 .order--dsk-2 {
     @include media($screen-sm) {
         order: 2;
