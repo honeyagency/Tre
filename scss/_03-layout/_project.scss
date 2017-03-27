@@ -1,6 +1,13 @@
 .post-type-project {
     .section--galelry-wrap {
         .block--gallery-featured {
+            margin-bottom: $mobile-spacing;
+
+            @include media($screen-sm) {
+                margin-bottom: 0;
+            }
+
+
             img {
                 width: 100%;
                 height: auto;
@@ -32,7 +39,10 @@
         //     }
         // }
         .block--gallery {
-            column-count: 2;
+            @include media($screen-sm) {
+                column-count: 2;
+            }
+
 
             img {
                 margin: 0;
