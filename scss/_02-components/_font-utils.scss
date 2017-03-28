@@ -58,6 +58,16 @@
     font-size: 1.6rem;
 }
 
+.font--very-large {
+    font-size: 3rem;
+    line-height: 0.85;
+
+    @include media($screen-sm) {
+        font-size: 4rem;
+        line-height: 0.85;
+    }
+}
+
 .text--center {
     text-align: center !important;
 }
@@ -146,6 +156,7 @@
         }
     }
 }
-.no--hyphen{
+
+.no--hyphen {
     hyphens: none;
 }

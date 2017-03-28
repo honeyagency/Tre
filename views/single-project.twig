@@ -40,63 +40,55 @@
 					</div>
 				{% endif %}
 			</section>
+			{% spaceless %}
 			<section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between">
 				<div class="block--gallery-featured grid--one type--{{project.galleryfeature.type}} margin--bot-1-mob">
 					{% if project.galleryfeature.type == 'image' %}
-						<img data-original="{{project.galleryfeature.image|resize(1280, 720)}}"
-						alt="{{post.title}}"
-						width="100%"
-						data-original-set="
-						{{project.galleryfeature.image|resize(640)}}  640w,
-						{{project.galleryfeature.image|resize(750)}}  750w,
-						{{project.galleryfeature.image|resize(1080)}} 1080w,
-						{{project.galleryfeature.image|resize(1280)}} 1280w,
-						{{project.galleryfeature.image|resize(1366)}} 1366w,
-						{{project.galleryfeature.image|resize(1440)}} 1440w,
-						{{project.galleryfeature.image|resize(1920)}} 1920w"
-						sizes="100vw">
+						<img data-original="{{project.galleryfeature.image|resize(1280, 720)}}" alt="{{post.title}}" width="100%" data-original-set=" {{project.galleryfeature.image|resize(640)}}  640w, {{project.galleryfeature.image|resize(750)}}  750w, {{project.galleryfeature.image|resize(1080)}} 1080w, {{project.galleryfeature.image|resize(1280)}} 1280w, {{project.galleryfeature.image|resize(1366)}} 1366w, {{project.galleryfeature.image|resize(1440)}} 1440w, {{project.galleryfeature.image|resize(1920)}} 1920w" sizes="100vw">
 					{% else %}
 						{{project.galleryfeature.video}}
 					{% endif %}
 				</div>
-				<div class="block--gallery grid--one column--1 spacing--dsk-vert-2">
+				<div class="block--gallery grid--one column--1">
+					
 					{% for image in project.gallery %}
-						{# {% if loop.index is odd %} #}
-							<img
-							data-original="{{image|resize(640)}}"
-							alt=""
-							class="grid--one"
-							data-original-set="
-							{{image|resize(600)}} 320w,
-							{{image|resize(710)}} 375w,
-							{{image|resize(540)}} 540w,
-							{{image|resize(640)}} 640w,
-							{{image|resize(683)}} 683w,
-							{{image|resize(720)}} 720w,
-							{{image|resize(960)}} 960w"
-							sizes="max-width: 768px 100vw, 50vw">
-						{# {% endif %} #}
+						<img data-original="{{image|resize(640)}}" alt="" class="grid--one" data-original-set=" {{image|resize(600)}} 320w, {{image|resize(710)}} 375w, {{image|resize(540)}} 540w, {{image|resize(640)}} 640w, {{image|resize(683)}} 683w, {{image|resize(720)}} 720w, {{image|resize(960)}} 960w" sizes="max-width: 768px 100vw, 50vw">
 					{% endfor %}
 				</div>
-				{# <div class="block--gallery-right grid--one grid--sm-half spacing--dsk-vert-2">
-					{% for image in project.gallery %}
-						{% if loop.index is even %}
-							<img
-							data-original="{{image|resize(640)}}"
-							alt=""
-							class="grid--one"
-							data-original-set="
-							{{image|resize(320)}}  320w,
-							{{image|resize(375)}}  375w,
-							{{image|resize(540)}} 540w,
-							{{image|resize(640)}} 640w,
-							{{image|resize(683)}} 683w,
-							{{image|resize(720)}} 720w,
-							{{image|resize(960)}} 960w"
-							sizes="50vw">
-						{% endif %}
-					{% endfor %}
-				</div> #}
+			</section>
+			{% endspaceless %}
+			<section class="bg--pink spacing--vert-5 spacing--gutter flex flex--wrap justify--between align--items-baseline font--acumin text--uppercase">
+				{% if prevnext.prev != null %}
+					<div>
+						<a href="{{prevnext.prev.link}}">
+							<h2 class="color--white font--very-large">Previous</h2>
+							<span class="color--black font--very-large">{{prevnext.prev.title}}</span>
+						</a>
+					</div>
+				{% else %}
+					<div>
+						<a href="{{site.url}}/projects">
+							<h2 class="color--white font--very-large">All Projects</h2>
+							<span class="color--black font--very-large">View</span>
+						</a>
+					</div>
+				{% endif %}
+				{% if prevnext.next != null %}
+					<div class="text--right">
+						<a href="{{prevnext.next.link}}">
+							<h2 class="color--white font--very-large">Next</h2>
+							<span class="color--black font--very-large">{{prevnext.next.title}}</span>
+						</a>
+					</div>
+				{% else %}
+					<div class="text--right">
+						<a href="{{site.url}}/projects">
+							<h2 class="color--white font--very-large">All Projects</h2>
+							<span class="color--black font--very-large">View</span>
+						</a>
+					</div>
+				{% endif %}
+				
 			</section>
 		</article>
 		</main>

@@ -4,7 +4,7 @@
             margin-bottom: $mobile-spacing;
 
             @include media($screen-sm) {
-                margin-bottom: 0;
+                margin-bottom: 1em;
             }
 
 
@@ -28,19 +28,10 @@
             }
         }
 
-        // .block--gallery-right, .block--gallery-left {
-        //     img {
-        //         margin-bottom: $mobile-spacing;
-        //         display: block;
-
-        //         @include media($screen-sm) {
-        //             margin-bottom: 1em;
-        //         }
-        //     }
-        // }
         .block--gallery {
             @include media($screen-sm) {
                 column-count: 2;
+                column-gap: 1em;
             }
 
 

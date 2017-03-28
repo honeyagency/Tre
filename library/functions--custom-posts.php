@@ -55,7 +55,7 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
     }
 }
 
-function getSinglePost($posttype = null, $specificid = null)
+function getSinglePost($posttype = null, $specificid = null, $less = null)
 {
     if ($specificid != null) {
         $postId = $specificid[0];
@@ -63,7 +63,7 @@ function getSinglePost($posttype = null, $specificid = null)
         $postId = get_the_id();
     }
 
-    if ($posttype == 'project') {
+    if ($posttype == 'project' and $less != true) {
         $postinfo = prepareProjectFields($postId);
     } else {
         $postinfo = null;

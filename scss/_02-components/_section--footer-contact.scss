@@ -7,19 +7,4 @@
         margin: 0 auto;
     }
 
-    @include media($screen-xs) {}
-
-
-    @include media($screen-sm) {
-
-    }
-
-
-    @include media($screen-md) {}
-
-
-    @include media($screen-lg) {}
-
-
-    @include media($screen-xl) {}
 }
