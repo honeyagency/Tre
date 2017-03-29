@@ -1,5 +1,8 @@
 .section--service {
-    min-height: 560px;
+    @include media($screen-sm) {
+        min-height: 560px;
+    }
+
     align-items: center;
 }
 
