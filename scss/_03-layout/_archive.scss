@@ -17,5 +17,9 @@
                 bottom: -1.1em;
             }
         }
+
+        @include media($max-sm) {
+            
+        }
     }
 }

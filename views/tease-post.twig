@@ -1,4 +1,4 @@
-<a class="block--project block--blog {% if post.thumbnail %}bg--image{% else %}bg--color{% endif %}" href="{{post.permalink}}">
+<a class="block--project block--blog {% if post.thumbnail %}bg--image{% else %}color bg--color{% endif %}" href="{{post.permalink}}">
 	{% if post.thumbnail %}<img src="{{post.thumbnail.src|resize(1304)}}">{% endif %}
 	<div class="project--meta">
 		<h2 class="color--white">{{post.title}}<br><span class="font--light">{{post.date|date('Y')}}</span></h2>

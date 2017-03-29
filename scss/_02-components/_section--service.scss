@@ -1,11 +1,10 @@
 .section--service {
     min-height: 560px;
     align-items: center;
+}
 
-    .block--project {
-        display: block;
-        width: 100%;
-
+.block--project {
+    &.service--page {
         .project--meta {
             width: calc(100% - 2em);
         }
@@ -20,9 +19,18 @@
             position: absolute;
             right: 0;
             top: initial;
-            bottom: 2em;
+            bottom: 2.5em;
+        }
+
+        min-height: 56vw;
+
+        @include media($screen-sm) {
+            min-height: 33vw;
+        }
+
+
+        @include media($screen-md) {
+            min-height: 20vw;
         }
     }
-
-    .block--service {}
 }

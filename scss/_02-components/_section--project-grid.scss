@@ -3,12 +3,6 @@
         @include media($screen-sm) {
             column-count: 2;
             column-gap: 1em;
-
-            .bg--pink {
-                -webkit-margin-before: 1em;
-            }
-
-            -webkit-margin-before: -1em;
         }
     }
 }
