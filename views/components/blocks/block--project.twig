@@ -1,6 +1,6 @@
-<a class="block--project bg--black {% if project.postinfo.grid_image == null %}color{% endif %}" href="{{project.link}}">
+<a class="block--project bg--black {% if project.postinfo.grid_image == null %}color{% endif %}{% if project.postinfo.featured == true %}featured{% else %}not-featured{% endif %}" href="{{project.link}} {% if project.postinfo.featured == true %}featured{% else %}not-featured{% endif %}">
 	{% if project.postinfo.grid_image %}<img src="{{project.postinfo.grid_image|resize(1304)}}">{% endif %}
-	<div class="project--meta">
+	<div class="project--meta {% if project.postinfo.featured == true %}featured{% else %}not-featured{% endif %}">
 		<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date|date('Y')}}</span></h2>
 		<div class="block--categories color--pink font--display text--right">
 			<hr class="color--pink">{% for category in project.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}

@@ -1,6 +1,6 @@
 {% for project in projects %}
 	{% if project.postinfo.featured == true %}
-		<div class="grid--one">
+		<div class="grid--one featured">
 			{% include 'components/blocks/block--project.twig' %}
 		</div>
 	{% endif %}
@@ -8,14 +8,14 @@
 {% set fullLoop = projects|length %}
 {% set halfLoop = fullLoop / 2 %}
 
-<div class="grid--one grid--sm-half flex flex--wrap flex--column">
+<div class="grid--one grid--sm-half flex flex--wrap flex--column not-featured">
 	{% for project in projects|slice(0,halfLoop) %}
 		{% if project.postinfo.featured != true %}
 			{% include 'components/blocks/block--project.twig' %}
 		{% endif %}
 	{% endfor %}
 </div>
-<div class="grid--one grid--sm-half flex flex--wrap flex--column">
+<div class="grid--one grid--sm-half flex flex--wrap flex--column not-featured">
 	{% for project in projects|slice(halfLoop,fullLoop) %}
 		{% if project.postinfo.featured != true %}
 			{% include 'components/blocks/block--project.twig' %}

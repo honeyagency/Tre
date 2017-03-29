@@ -44,9 +44,36 @@
             }
         }
 
+        @include media($screen-md) {
+            &.featured {
+                h2 {
+                    font-size: 4em;
+                    line-height: .85;
+                    display: inline-block;
+                    margin-right: 2em;
+                }
+            }
+        }
+
+
+        @include media($max-md) {
+            &.featured {
+                hr {
+                    display: none !important;
+                }
+
+                font-size: 0.9em;
+            }
+        }
+
+
         @include media($max-lg) {
-            hr {
-                display: none !important;
+            &.not-featured {
+                hr {
+                    display: none !important;
+                }
+
+                font-size: 0.9em;
             }
         }
 
@@ -69,8 +96,6 @@
             @include media($screen-sm) {
                 will-change: transform;
                 transition: transform 0.3s $base-cubic;
-
-                // transform: translateY(15px) translateX(-5em) rotate(-60deg) skewX(32deg);
                 width: 120px;
                 margin-right: -10px;
             }
@@ -104,12 +129,21 @@
             // left: -10em;
             // top: -3.3em;
         }
+    }
 
-
-        @include media($max-lg) {
-            font-size: 0.9em;
+    @include media($screen-md) {
+        &.featured {
+            .block--categories {
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                position: relative;
+                display: inline-block;
+            }
         }
     }
+
 
     @include media($screen-sm) {
         &:after {
