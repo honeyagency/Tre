@@ -62,6 +62,14 @@ function prepareProjectFields($postId = null)
     );
     return $section;
 }
+function prepareProjectsPage()
+{
+    $section = array(
+        'filter_text'  => get_field('field_58dc3dbfc7b56'),
+        'reset_filter' => get_field('field_58dc3e41975c0'),
+    );
+    return $section;
+}
 
 function prepareHomepageFields()
 {
@@ -197,7 +205,7 @@ function prepareAboutPage()
     }
     $about = array(
         'content' => $content,
-        'team'  => $team,
+        'team'    => $team,
     );
     return $about;
 }

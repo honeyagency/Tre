@@ -28,7 +28,8 @@ if (is_page('home')) {
     $context['home'] = prepareHomepageFields();
 } elseif (is_page('projects')) {
     if (!empty($_GET["cat"])) {
-        $cat                   = $_GET["cat"];
+        $context['projPage'] = prepareProjectsPage();
+        $cat                 = $_GET["cat"];
         if (is_numeric($cat)) {
             $category = get_the_category_by_id($cat);
         }

@@ -1,0 +1,62 @@
+{
+    "key": "group_58dc3db9aaf05",
+    "title": "Project Page Fields",
+    "fields": [
+        {
+            "key": "field_58dc3dbfc7b56",
+            "label": "Filter Text",
+            "name": "filter_text",
+            "type": "text",
+            "instructions": "This is the text used to explain when someone is filtering projects. I.e. <code>You're currently filtering by all<\/code> activation projects.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58dc3e41975c0",
+            "label": "Reset Filter",
+            "name": "reset_filter_button_text",
+            "type": "text",
+            "instructions": "This is the text in the button to reset project filters. i.e. <code>Get this out of my face.<\/code>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "10"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1490828911
+}

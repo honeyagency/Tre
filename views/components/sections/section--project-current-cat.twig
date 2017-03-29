@@ -1,0 +1,9 @@
+<div class="margin--bot-1 grid--one bg--pink spacing--gutter spacing--vert-3 text--center color--white">
+	<h2 class="font--display no--hyphen">{% if projPage.filter_text %}{{projPage.filter_text}}{% else %}You're currently filtering by all{% endif %} {{currentCat}} projects.</h2><br>
+	<a href="{{post.link}}" class="color--black button">{% if projPage.reset_filter %}{{projPage.reset_filter}}{% else %}Get this out of my face.{% endif %}</a>
+</div>
+{% for project in projects %}
+	<div class="grid--one">
+		{% include 'components/blocks/block--project.twig' %}
+	</div>
+{% endfor %}
