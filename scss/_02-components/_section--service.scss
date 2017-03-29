@@ -1,27 +1,28 @@
 .section--service {
     min-height: 560px;
-align-items: center;
+    align-items: center;
+
     .block--project {
         display: block;
         width: 100%;
-        // margin-bottom: -100%;
+
+        .project--meta {
+            width: calc(100% - 2em);
+        }
 
         img {
             position: absolute;
             height: 100%;
             max-width: none;
         }
+
+        .block--categories {
+            position: absolute;
+            right: 0;
+            top: initial;
+            bottom: 2em;
+        }
     }
 
-    .block--service {
-        // p {
-        //     &:first-of-type {
-        //         column-span: all;
-        //         font-size: 1.1em;
-        //         // padding-bottom: 1em;
-        //         // border-bottom: 1px solid map-get($gray, buttons);
-        //     }
-        // }
-   
-    }
+    .block--service {}
 }

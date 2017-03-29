@@ -10,18 +10,18 @@
 	</section>
 	{% for service in services %}
 		<section class="section--service flex flex--wrap justify--around spacing--gutter spacing--vert-2 max-wrap margin-center align--items-baseline">
-			<div class="block--service grid--one grid--sm-half  column--md-2">
+			<div class="block--service grid--one grid--md-half column--md-2">
 				<h3 class="title--stack color--pink">{{service.title|split(' ', 2)[0]}}<br>{{service.title|split(' ', 2)[1]}}</h3>
 				{{service.content}}
 			</div>
-			<div class="grid--one grid--sm-third ">
+			<div class="grid--one grid--md-third">
 				{% if service.project %}
 					{% set project = service.project %}
-					<a class="block--project bg--black bg-image" href="{{project.link}}" style="background-image:url('{{project.postinfo.grid_image|resize(1304)}}')">
+					<a class="block--project service--page bg--black bg-image" href="{{project.link}}" style="background-image:url('{{project.postinfo.grid_image|resize(1304)}}')">
 						<div class="project--meta">
 							<h2 class="color--white">{{project.title}}<br><span class="font--light">{{project.postinfo.date|date('Y')}}</span></h2>
 							<div class="block--categories color--pink font--display text--right">
-								<hr class="color--pink">{% for category in project.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}
+								{% for category in project.categories|reverse %}<span class="category">{% if loop.index > 1 %}+ {% endif %}{{category.name}}</span>{% endfor %}
 							</div>
 						</div>
 					</a>
@@ -30,7 +30,6 @@
 		<section class="margin--top-1 bg--pink spacing--vert-4 grid--one color--white spacing--gutter grid-- text--center"></section>
 	</section>
 {% endfor %}
-
 </article>
 {% include 'components/sections/section--footer-contact.twig' %}
 </main>

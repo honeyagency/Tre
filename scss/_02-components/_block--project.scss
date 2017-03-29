@@ -1,16 +1,23 @@
 .block--project {
     position: relative;
     margin-bottom: $mobile-spacing;
+    overflow: hidden;
+    display: block;
+    max-height: 70vh;
 
     @include media($screen-sm) {
-        min-height: 250px;
+        &.color {
+            min-height: 250px;
+        }
+
         margin-bottom: 1em;
     }
 
 
-    overflow: hidden;
-    display: block;
-    max-height: 70vh;
+    @include media($max-sm) {
+        min-height: 56vw;
+    }
+
 
     img {
         margin-bottom: -10px;
@@ -19,34 +26,41 @@
 
     .project--meta {
         position: absolute;
-        left: 15px;
+        bottom: 1.2em;
+        left: $mobile-spacing;
+        width: calc(100% - 2em);
+        z-index: 9;
 
-        @include media($screen-sm) {
-            left: 1em;
+        h2 {
+            font-size: 2.5em;
+            max-width: 50%;
+            hyphens: none;
+
+            @include media($screen-lg) {
+                font-size: 4em;
+                line-height: .85;
+                display: inline-block;
+                margin-right: 2em;
+            }
+        }
+
+        @include media($max-lg) {
+            hr {
+                display: none !important;
+            }
         }
 
 
-        z-index: 9;
-        bottom: 1.2em;
-
-        h2 {
-            @include media($screen-sm) {
-                font-size: 4em;
-                line-height: .85;
-            }
-
-
-            max-width: 300px;
-            hyphens: none;
+        @include media($screen-sm) {
+            left: 1.2em;
         }
     }
 
     .block--categories {
         transform: translateY(8em);
         position: relative;
-        left: 10em;
         height: 0;
-        top: -3.3em;
+        top: -2em;
 
         hr {
             transform: translateY(35px) translateX(-6em) rotate(-60deg) skewX(32deg);
@@ -55,7 +69,8 @@
             @include media($screen-sm) {
                 will-change: transform;
                 transition: transform 0.3s $base-cubic;
-                transform: translateY(5px) translateX(-5em) rotate(-60deg) skewX(32deg);
+
+                // transform: translateY(15px) translateX(-5em) rotate(-60deg) skewX(32deg);
                 width: 120px;
                 margin-right: -10px;
             }
@@ -75,6 +90,24 @@
         @include media($screen-sm) {
             transition: transform 0.3s $base-cubic;
             will-change: transform;
+        }
+
+
+        @include media($screen-lg) {
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            position: relative;
+            display: inline-block;
+
+            // left: -10em;
+            // top: -3.3em;
+        }
+
+
+        @include media($max-lg) {
+            font-size: 0.9em;
         }
     }
 
@@ -100,7 +133,7 @@
 
                 hr {
                     transition: transform 0.3s $base-cubic;
-                    transform: translateY(5px) translateX(-5em) rotate(-60deg) skewX(32deg);
+                    transform: translateY(15px) translateX(-5em) rotate(-60deg) skewX(32deg);
                 }
 
                 .category {
