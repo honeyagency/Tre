@@ -12,6 +12,9 @@
 $context                 = Timber::get_context();
 $post                    = Timber::query_post();
 $context['post']         = $post;
+if ('post' == get_post_type()) {
+    $context['nextPosts'] = getCustomPosts('post', 3, null, 'date', $post, null);
+}
 $context['comment_form'] = TimberHelper::get_comment_form();
 if ('project' == get_post_type()) {
     $context['project'] = prepareProjectFields();
