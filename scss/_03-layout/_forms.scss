@@ -68,7 +68,6 @@ textarea {
     &:-ms-input-placeholder {
         color: map-get($black, main);
     }
-    
 }
 
 select {
@@ -77,6 +76,7 @@ select {
     -webkit-appearance: none;
     border-radius: 0;
     border-color: map-get($black, main);
+    border: 1px solid;
 
     &.icon-arrow-down {
         background-size: 10px;

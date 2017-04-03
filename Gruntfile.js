@@ -38,11 +38,7 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
-                autoprefixer: {
-                    add: true,
-                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
-                    
-                }
+
             },
             dist: {
                 files: {
@@ -50,18 +46,19 @@ module.exports = function(grunt) {
                 }
             }
         },
-        // postcss: {
-        //     options: {
-        //         processors: [
-        //             require('postcss-font-magician')({
-        //                 hosted: '../fonts/'
-        //             })
-        //         ]
-        //     },
-        //     dist: {
-        //         src: '<%= conf.app %>/main.min.css'
-        //     }
-        // },
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer'),
+                ]
+            },
+            dist: {
+                files: {
+                    '<%= conf.app %>/main.min.css': '<%= conf.app %>/main.min.css'
+                }
+            }
+        },
         watch: {
             twig: {
                 files: '**/*.twig',

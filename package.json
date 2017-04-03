@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/joshre/buscemi#readme",
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "cssnano": "*",
     "grunt": "*",
     "grunt-contrib-clean": "*",
