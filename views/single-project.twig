@@ -21,7 +21,7 @@
 			<div class="block--categories color--pink font--display text--right">
 				<hr class="color--pink width">{% for category in post.categories|sort('category.name')|reverse %}<a href="{{site.url}}/projects/?cat={{category.id}}" class="color--pink">{% if loop.index > 1 %}<br>+ {% endif %}{{category.name}}{% endfor %}</a></div>
 			</section>
-			<section class="flex flex--wrap max-wrap margin-center spacing--gutter justify--around align--items-baseline">
+			<section class="flex flex--wrap max-wrap margin-center spacing--gutter justify--around align--items-baseline spacing--vert-1">
 				{% if project.content %}
 					<div class="grid--one grid--md-half margin--bot-1">
 						<h3 class="color--pink title--stack color--pink">The<br>Project</h3>
@@ -41,7 +41,7 @@
 				{% endif %}
 			</section>
 			{% spaceless %}
-			<section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between">
+			<section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between margin--top-2">
 				<div class="block--gallery-featured grid--one type--{{project.galleryfeature.type}} margin--bot-1-mob">
 					{% if project.galleryfeature.type == 'image' %}
 						<img data-original="{{project.galleryfeature.image|resize(1280, 720)}}" alt="{{post.title}}" width="100%" data-original-set=" {{project.galleryfeature.image|resize(640)}}  640w, {{project.galleryfeature.image|resize(750)}}  750w, {{project.galleryfeature.image|resize(1080)}} 1080w, {{project.galleryfeature.image|resize(1280)}} 1280w, {{project.galleryfeature.image|resize(1366)}} 1366w, {{project.galleryfeature.image|resize(1440)}} 1440w, {{project.galleryfeature.image|resize(1920)}} 1920w" sizes="100vw">
