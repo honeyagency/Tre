@@ -12,18 +12,19 @@
 			<i class="hidden--dsk icon-burger" data-grunticon-embed></i>
 			{% include 'components/navigation.twig' %}
 		{% endblock %}
-	</header>
-	{# {% block social %}
-		{% include 'components/blocks/block--soical-tab.twig' %}
-	{% endblock %} #}
-	{% block content %}
-		<main role="main" class="content-wrapper">
-		Sorry, no content
-		</main>
-	{% endblock %}
-	{% block footer %}
-		{% include 'footer.twig' %}
-		{{ function('wp_footer') }}
-	{% endblock %}
+	</div>
+</header>
+{# {% block social %}
+	{% include 'components/blocks/block--soical-tab.twig' %}
+{% endblock %} #}
+{% block content %}
+	<main role="main" class="content-wrapper">
+	Sorry, no content
+	</main>
+{% endblock %}
+{% block footer %}
+	{% include 'footer.twig' %}
+	{{ function('wp_footer') }}
+{% endblock %}
 </body>
 </html>
