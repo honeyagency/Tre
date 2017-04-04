@@ -73,14 +73,17 @@ function buscemi_scripts()
 }
 add_action('wp_enqueue_scripts', 'buscemi_scripts');
 
-add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+add_filter('script_loader_tag', function ($tag, $handle) {
 
-    if ( 'jquery' !== $handle )
+    if ('jquery' == $handle) {
+        return str_replace(' src', 'charset="UTF-8" src', $tag);
+    } elseif ('buscemi_script' == $handle) {
+        return str_replace(' src', 'charset="UTF-8" src', $tag);
+    } else {
         return $tag;
+    }
 
-    return str_replace( ' src', 'charset="UTF-8" src', $tag );
-}, 10, 2 );
-
+}, 10, 2);
 
 // Allowing SVG preveiw in WP Upload
 function cc_mime_types($mimes)
