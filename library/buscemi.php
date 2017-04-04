@@ -36,7 +36,8 @@ function jquery_enqueue()
 {
     wp_dequeue_script('jquery');
     wp_deregister_script('jquery');
-    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
+    wp_register_script('jquery', get_template_directory_uri() . '/app/vendors/jquery-3.2.0.min.js', null, false, false);
+
 }
 
 function localInstall()
