@@ -41,11 +41,13 @@ function jquery_enqueue()
 
 function localInstall()
 {
-    if ('127.0.0.1' == $_SERVER["REMOTE_ADDR"]) {
-        $res = false;
+    $url = get_site_url();
+    $tld = end(explode(".", parse_url($url, PHP_URL_HOST))); // echos "com"
+    if ($tld == 'dev') {
+        $res = true;
     } else {
 
-        $res = true;
+        $res = false;
     }
     return ($res);
 }
