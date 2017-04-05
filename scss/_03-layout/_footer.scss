@@ -59,6 +59,12 @@ footer {
 
 
     .email--signup {
+        #mc_embed_signup {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
         input {
             background-color: map-get($pink, main);
             border: none;

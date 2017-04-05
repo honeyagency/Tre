@@ -35,6 +35,12 @@ nav {
 
             a {
                 color: inherit;
+                transition: color 0.2s $base-cubic;
+
+                &:hover {
+                    transition: color 0.2s $base-cubic;
+                    color: map-get($pink, main);
+                }
             }
         }
     }
@@ -171,9 +177,11 @@ nav {
         }
     }
 }
-.home{
+
+
+.home {
     .current-menu-item {
-        a{
+        a {
             color: inherit;
         }
     }
