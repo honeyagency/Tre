@@ -5,7 +5,7 @@
 	data-original-set="
 	{{project.grid_image|resize(640, 360)}}  640w,
 	{{project.grid_image|resize(750, 420)}}  750w,
-	{{project.grid_image|resize(1080, 608)}} 1080w,
+	{{project.grid_image|resize(1080, 608)}} 10f80w,
 	{{project.grid_image|resize(1280, 720)}} 1280w,
 	{{project.grid_image|resize(1366, 768)}} 1366w,
 	{{project.grid_image|resize(1440, 810)}} 1440w,
@@ -14,6 +14,7 @@
 	<div class="block--content spacing--gutter margin-center max-wrap vertical--center">
 		<h1 class="color--white line--short">{{post.title}}<br><span class="font--thin">{{project.date|date('Y')}}</span></h1>
 	</div>
-	<div class="block--categories color--pink font--display text--right">
-		<hr class="color--pink width">{% for category in post.categories|sort('category.name')|reverse %}<a href="{{site.url}}/projects/?cat={{category.id}}" class="color--pink">{% if loop.index > 1 %}<br>+ {% endif %}{{category.name}}{% endfor %}</a></div>
-	</section>
+	<div class="block--categories color--pink font--display text--right max-wrap margin-center">
+		<hr class="color--pink width">{% for category in post.categories|sort('category.name')|reverse %}<a href="{{site.url}}/projects/?cat={{category.id}}" class="color--pink">{% if loop.index > 1 %}<br>+ {% endif %}{{category.name}}{% endfor %}</a>
+	</div>
+</section>

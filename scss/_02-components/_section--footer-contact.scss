@@ -1,10 +1,27 @@
 .section--footer-contact {
-    padding-bottom: 7em !important;
+    padding-top: 4em;
+    padding-bottom: 6em;
+
+    @include media($screen-xs) {
+        padding-bottom: 8em;
+    }
+
+    @include media($screen-sm) {
+        padding-top: 4em;
+        padding-bottom: 12em;
+    }
+
+
+    @include media($screen-lg) {
+        padding-top: 6em;
+        padding-bottom: 14em;
+    }
+
+
     margin-bottom: -3em;
 
     .wpcf7 {
         max-width: 680px;
         margin: 0 auto;
     }
-
 }
