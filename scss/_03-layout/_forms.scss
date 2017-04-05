@@ -74,6 +74,7 @@ select {
     background-color: transparent;
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     border-radius: 0;
     border-color: map-get($black, main);
     border: 1px solid;

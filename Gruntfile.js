@@ -14,6 +14,9 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
+            options: {
+                'ASCIIOnly': true,
+            },
             dist: {
                 files: {
                     "app/app.min.js": ['static/**/*.js', '!static/icons/**'],
@@ -38,7 +41,6 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
-
             },
             dist: {
                 files: {
@@ -79,7 +81,7 @@ module.exports = function(grunt) {
             },
             cssnano: {
                 files: ["<%= conf.sass %>"],
-                tasks: ["cssnano"]
+                tasks: ["cssnano", "postcss"]
             },
             svgmin: {
                 files: ["<%= conf.iconts %>/*.svg"],
