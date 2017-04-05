@@ -3,6 +3,11 @@
 	<main role="main" class="content-wrapper ">
 	<article class="post-type-{{post.post_type}}  color--black" id="post-{{post.ID}}">
 		{% include 'components/sections/section--base-header.twig' %}
+		{% if post.content %}
+			<section class="article-content spacing--vert-2 margin--bot-3">
+				{{post.content}}
+			</section>
+		{% endif %}
 		{% for service in services %}
 			{% include 'components/sections/section--service.twig' %}
 		{% endfor %}

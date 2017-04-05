@@ -10,7 +10,7 @@
         }
 
         @include media($screen-sm) {
-            margin-left: 20%;
+            margin-left: 10%;
             width: 300px;
         }
     }
@@ -27,12 +27,18 @@
         padding-bottom: 50vh;
 
         .block--about-details {
-            margin-left: 25%;
+            margin-left: 15%;
         }
     }
 
 
     @include media($max-sm) {
+        .block--about-details {
+            p {
+                color: white;
+            }
+        }
+
         background-image: none !important;
     }
 }
