@@ -212,6 +212,11 @@ hr {
         margin-top: 10px;
         margin-left: -5px;
     }
+    &.normal{
+        border: 0;
+        border-top: 1px solid;
+        transform: none;
+    }
 }
 
 .wf-loading {

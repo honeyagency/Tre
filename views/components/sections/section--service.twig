@@ -1,0 +1,14 @@
+<section class="section--service flex flex--wrap justify--around spacing--gutter spacing--vert-1 max-wrap margin-center align--items-baseline">
+	<div class="block--service grid--one grid--md-half">
+		<h3 class="title--stack color--pink">{{service.title|split(' ', 2)[0]}}<br>{{service.title|split(' ', 2)[1]}}</h3>
+		{{service.content}}
+	</div>
+	<div class="grid--one grid--md-third">
+		{% if service.project %}
+			{% include 'components/blocks/block--service-project.twig' %}
+		{% endif %}
+	</div>
+{% if loop.last %}{% else %}
+	<section class="margin--top-3 grid--one spacing--gutter text--center"><hr class="color--gray normal"></section>
+{% endif %}
+</section>

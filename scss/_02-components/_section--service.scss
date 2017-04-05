@@ -1,6 +1,15 @@
 .section--service {
     @include media($screen-sm) {
-        min-height: 560px;
+        // min-height: 560px;
+    }
+
+
+    &:last-of-type {
+        margin-bottom: 3em;
+
+        @include media($screen-sm) {
+            margin-bottom: 6em;
+        }
     }
 
     align-items: center;
@@ -10,6 +19,14 @@
     &.service--page {
         .project--meta {
             width: calc(100% - 2em);
+
+            h2 {
+                font-size: 2em;
+
+                @include media($screen-md) {
+                    font-size: 2.5em;
+                }
+            }
         }
 
         img {

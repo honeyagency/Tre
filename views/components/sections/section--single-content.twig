@@ -1,14 +1,7 @@
 <section class="article-content spacing--vert-2 margin--bot-3">
-	<h1 class="color--pink title--stack">{{post.title}}</h1>
+	{# <h1 class="color--pink title--stack">{{post.title}}</h1> #}
 	{{post.content}}
-	<div class="flex--desk  flex--wrap justify--between">
-		<div class="grid--one">
-			<h6 class="color--pink font--display">More Posts:</h6>
-			<hr class="color--pink width text--right hidden--mob">
-			<br class="hidden--dsk">
-		</div>
-		{% for post in nextPosts %}
-			{% include 'components/blocks/block--more-posts.twig' %}
-		{% endfor %}
-	</div>
+	{% if post.post_type == 'post' %}
+		{% include 'components/sections/section--more-posts.twig' %}
+	{% endif %}
 </section>

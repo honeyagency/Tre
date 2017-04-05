@@ -1,0 +1,6 @@
+<section class="header--bg block--angle angle--right after grid--one {% if post.thumbnail  != null %}bg--image{% else %}bg--pink{% endif %}">
+{% if post.thumbnail  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
+<div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
+	<h1 class="color--white line--short">{{post.title}}</h1>
+</div>
+</section>

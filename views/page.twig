@@ -2,10 +2,10 @@
 {% block content %}
 	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="spacing--gutter spacing--vert-2">
-			<h1>{{post.title}}</h1>
-			{{post.content}}
+		{% include 'components/sections/section--base-header.twig' %}
+		<section class="max-wrap margin-center spacing--gutter">
+			{% include 'components/sections/section--single-content.twig' %}
 		</section>
 	</article>
-</main>
+	</main>
 {% endblock %}

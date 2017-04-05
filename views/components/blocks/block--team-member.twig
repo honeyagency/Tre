@@ -1,0 +1,11 @@
+{% for member in about.team %}
+	{% if member.image %}
+		<div class="grid--one grid--sm-third align--self-start order--dsk-2">
+			<img src="{{member.image|resize(800)}}" width="400" alt="{{member.name}}">
+		</div>
+	{% endif %}
+	<div class="grid--one grid--sm-half">
+		<h3 class="color--pink title--stack">{{member.name}}</h3>
+		{{member.biography}}
+	</div>
+{% endfor %}

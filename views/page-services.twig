@@ -2,27 +2,11 @@
 {% block content %}
 	<main role="main" class="content-wrapper ">
 	<article class="post-type-{{post.post_type}}  color--black" id="post-{{post.ID}}">
-		<section class="header--bg block--angle angle--right after grid--one {% if post.thumbnail  != null %}bg--image{% else %}bg--pink{% endif %}">
-		{% if post.thumbnail  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
-		<div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
-			<h1 class="color--white line--short">{{post.title}}</h1>
-		</div>
-	</section>
-	{% for service in services %}
-		<section class="section--service flex flex--wrap justify--around spacing--gutter spacing--vert-2 max-wrap margin-center align--items-baseline">
-			<div class="block--service grid--one grid--md-half">
-				<h3 class="title--stack color--pink">{{service.title|split(' ', 2)[0]}}<br>{{service.title|split(' ', 2)[1]}}</h3>
-				{{service.content}}
-			</div>
-			<div class="grid--one grid--md-third">
-				{% if service.project %}
-					{% include 'components/blocks/block--service-project.twig' %}
-				{% endif %}
-			</div>
-		<section class="margin--top-1 bg--pink spacing--vert-1 grid--one color--white spacing--gutter grid-- text--center"></section>
-	</section>
-{% endfor %}
-</article>
-{% include 'components/sections/section--footer-contact.twig' %}
-</main>
+		{% include 'components/sections/section--base-header.twig' %}
+		{% for service in services %}
+			{% include 'components/sections/section--service.twig' %}
+		{% endfor %}
+	</article>
+	{% include 'components/sections/section--footer-contact.twig' %}
+	</main>
 {% endblock %}

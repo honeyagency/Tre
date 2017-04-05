@@ -1,0 +1,10 @@
+<div class="flex--desk flex--wrap justify--between spacing--vert-2">
+	<div class="grid--one">
+		<h6 class="color--pink font--display">More Posts:</h6>
+		<hr class="color--pink width text--right hidden--mob margin--bot-2">
+		<br class="hidden--dsk">
+	</div>
+	{% for post in nextPosts %}
+		{% include 'components/blocks/block--more-posts.twig' %}
+	{% endfor %}
+</div>

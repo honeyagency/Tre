@@ -2,36 +2,12 @@
 {% block content %}
 	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}} " id="post-{{post.ID}}">
-		<section class="header--bg block--angle angle--right after grid--one {% if post.thumbnail  != null %}bg--image{% else %}bg--pink{% endif %}">
-		{% if post.thumbnail  != null %}<img src="{{post.thumbnail.src}}">{% endif %}
-		<div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
-			<h1 class="color--white line--short">{{post.title}}</h1>
-		</div>
-	</section>
-	<section class="flex flex--wrap spacing--dsk-vert-3 spacing--gutter max-wrap margin-center justify--between align--items-baseline">
-		<div class="grid--one section--about grid--sm-three-fourths column--md-2 spacing--vert-2 spacing--dsk–vert-3">
-			<h2 class="color--pink title--stack">{{about.content.title|split(' ', 2)[0]}}<br>{{about.content.title|split(' ', 2)[1]}}</h2>
-			{{about.content.content}}
-		</div>
-		<div class="grid--fifth">
-		</div>
-		{% if about.quote %}
-			<div class="margin--bot-5 grid--one bg--pink spacing--vert-6 text--center color--white">
-				<h2 class="font--display">{{about.quote}}</h2>
-			</div>
-		{% endif %}
-		{% for member in about.team %}
-			{% if member.image %}
-				<div class="grid--one grid--sm-third align--self-start order--dsk-2">
-					<img src="{{member.image|resize(800)}}" width="400" alt="{{member.name}}">
-				</div>
-			{% endif %}
-			<div class="grid--one grid--sm-half">
-				<h3 class="color--pink title--stack">{{member.name}}</h3>
-				{{member.biography}}
-			</div>
-		{% endfor %}
-	</section>
-</article>
-</main>
+		{% include 'components/sections/section--base-header.twig' %}
+		<section class="flex flex--wrap spacing--dsk-vert-3 spacing--gutter max-wrap margin-center justify--between align--items-baseline">
+			{% include 'components/blocks/block--about-content.twig' %}
+			{% include 'components/blocks/block--about-quote.twig' %}
+			{% include 'components/blocks/block--team-member.twig' %}
+		</section>
+	</article>
+	</main>
 {% endblock %}
