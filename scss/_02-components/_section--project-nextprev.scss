@@ -1,0 +1,21 @@
+.section--project-nextprev {
+    padding-bottom: 6em !important;
+
+    @include media($screen-sm) {
+        padding-bottom: 8em !important;
+    }
+
+
+    div {
+        @include media($max-md) {
+            flex-basis: 50%;
+        }
+
+
+        .font--very-large {
+            @include media($max-sm) {
+                font-size: 2em;
+            }
+        }
+    }
+}

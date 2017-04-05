@@ -1,0 +1,19 @@
+<section class="section--project-content flex flex--wrap max-wrap margin-center spacing--gutter justify--around align--items-baseline spacing--vert-1">
+	{% if project.content %}
+		<div class="grid--one grid--md-half margin--bot-1">
+			<h3 class="color--pink title--stack color--pink">The<br>Project</h3>
+			{{project.content}}
+			{% if project.external.link != null %}
+				<a href="{{project.external.link}}" class="button color--gray-button" target="_blank">{{project.external.text}}</a>
+			{% endif %}
+		</div>
+	{% endif %}
+	{% if project.details %}
+		<div class="grid--one block--details grid--md-third">
+			{% for detail in project.details %}
+				<h3>{{detail.title}}</h3>
+				<div>{{detail.description}}</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+</section>

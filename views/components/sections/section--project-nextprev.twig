@@ -1,0 +1,33 @@
+<section class="section--project-nextprev bg--pink spacing--vert-5 spacing--gutter flex flex--wrap justify--between align--items-baseline font--acumin text--uppercase">
+	{% if prevnext.prev != null %}
+		<div>
+			<a href="{{prevnext.prev.link}}">
+				<h2 class="color--white font--very-large">Previous</h2>
+				<span class="color--black font--very-large">{{prevnext.prev.title}}</span>
+			</a>
+		</div>
+	{% else %}
+		<div>
+			<a href="{{site.url}}/projects">
+				<h2 class="color--white font--very-large">All Projects</h2>
+				<span class="color--black font--very-large">View</span>
+			</a>
+		</div>
+	{% endif %}
+	{% if prevnext.next != null %}
+		<div class="text--right">
+			<a href="{{prevnext.next.link}}">
+				<h2 class="color--white font--very-large">Next</h2>
+				<span class="color--black font--very-large">{{prevnext.next.title}}</span>
+			</a>
+		</div>
+	{% else %}
+		<div class="text--right">
+			<a href="{{site.url}}/projects">
+				<h2 class="color--white font--very-large">All Projects</h2>
+				<span class="color--black font--very-large">View</span>
+			</a>
+		</div>
+	{% endif %}
+	
+</section>

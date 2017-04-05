@@ -2,94 +2,12 @@
 {% block content %}
 	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="header--bg block--angle angle--right after">
-			<img data-original="{{project.grid_image|resize(1280, 720)}}"
-			alt="{{post.title}}"
-			width="100%"
-			data-original-set="
-			{{project.grid_image|resize(640, 360)}}  640w,
-			{{project.grid_image|resize(750, 420)}}  750w,
-			{{project.grid_image|resize(1080, 608)}} 1080w,
-			{{project.grid_image|resize(1280, 720)}} 1280w,
-			{{project.grid_image|resize(1366, 768)}} 1366w,
-			{{project.grid_image|resize(1440, 810)}} 1440w,
-			{{project.grid_image|resize(1920, 1080)}} 1920w"
-			sizes="100vw">
-			<div class="block--content spacing--gutter margin-center max-wrap vertical--center">
-				<h1 class="color--white line--short">{{post.title}}<br><span class="font--thin">{{project.date|date('Y')}}</span></h1>
-			</div>
-			<div class="block--categories color--pink font--display text--right">
-				<hr class="color--pink width">{% for category in post.categories|sort('category.name')|reverse %}<a href="{{site.url}}/projects/?cat={{category.id}}" class="color--pink">{% if loop.index > 1 %}<br>+ {% endif %}{{category.name}}{% endfor %}</a></div>
-			</section>
-			<section class="flex flex--wrap max-wrap margin-center spacing--gutter justify--around align--items-baseline spacing--vert-1">
-				{% if project.content %}
-					<div class="grid--one grid--md-half margin--bot-1">
-						<h3 class="color--pink title--stack color--pink">The<br>Project</h3>
-						{{project.content}}
-						{% if project.external.link != null %}
-							<a href="{{project.external.link}}" class="button color--gray-button" target="_blank">{{project.external.text}}</a>
-						{% endif %}
-					</div>
-				{% endif %}
-				{% if project.details %}
-					<div class="grid--one block--details grid--md-third">
-						{% for detail in project.details %}
-							<h3>{{detail.title}}</h3>
-							<div>{{detail.description}}</div>
-						{% endfor %}
-					</div>
-				{% endif %}
-			</section>
-			{% spaceless %}
-			<section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between margin--top-2">
-				<div class="block--gallery-featured grid--one type--{{project.galleryfeature.type}} margin--bot-1-mob">
-					{% if project.galleryfeature.type == 'image' %}
-						<img data-original="{{project.galleryfeature.image|resize(1280, 720)}}" alt="{{post.title}}" width="100%" data-original-set=" {{project.galleryfeature.image|resize(640)}}  640w, {{project.galleryfeature.image|resize(750)}}  750w, {{project.galleryfeature.image|resize(1080)}} 1080w, {{project.galleryfeature.image|resize(1280)}} 1280w, {{project.galleryfeature.image|resize(1366)}} 1366w, {{project.galleryfeature.image|resize(1440)}} 1440w, {{project.galleryfeature.image|resize(1920)}} 1920w" sizes="100vw">
-					{% else %}
-						{{project.galleryfeature.video}}
-					{% endif %}
-				</div>
-				<div class="block--gallery grid--one column--1">
-					
-					{% for image in project.gallery %}
-						<img data-original="{{image|resize(640)}}" alt="" class="grid--one" data-original-set=" {{image|resize(600)}} 320w, {{image|resize(710)}} 375w, {{image|resize(540)}} 540w, {{image|resize(640)}} 640w, {{image|resize(683)}} 683w, {{image|resize(720)}} 720w, {{image|resize(960)}} 960w" sizes="max-width: 768px 100vw, 50vw">
-					{% endfor %}
-				</div>
-			</section>
-			{% endspaceless %}
-			<section class="bg--pink spacing--vert-5 spacing--gutter flex flex--wrap justify--between align--items-baseline font--acumin text--uppercase">
-				{% if prevnext.prev != null %}
-					<div>
-						<a href="{{prevnext.prev.link}}">
-							<h2 class="color--white font--very-large">Previous</h2>
-							<span class="color--black font--very-large">{{prevnext.prev.title}}</span>
-						</a>
-					</div>
-				{% else %}
-					<div>
-						<a href="{{site.url}}/projects">
-							<h2 class="color--white font--very-large">All Projects</h2>
-							<span class="color--black font--very-large">View</span>
-						</a>
-					</div>
-				{% endif %}
-				{% if prevnext.next != null %}
-					<div class="text--right">
-						<a href="{{prevnext.next.link}}">
-							<h2 class="color--white font--very-large">Next</h2>
-							<span class="color--black font--very-large">{{prevnext.next.title}}</span>
-						</a>
-					</div>
-				{% else %}
-					<div class="text--right">
-						<a href="{{site.url}}/projects">
-							<h2 class="color--white font--very-large">All Projects</h2>
-							<span class="color--black font--very-large">View</span>
-						</a>
-					</div>
-				{% endif %}
-				
-			</section>
-		</article>
-		</main>
-	{% endblock %}
+		{% include 'components/sections/section--project-header.twig' %}
+		{% include 'components/sections/sectoin--project-content.twig' %}
+		{% spaceless %}
+			{% include 'components/sections/section--project-gallery.twig' %}
+		{% endspaceless %}
+		{% include 'components/sections/section--project-nextprev.twig' %}
+	</article>
+	</main>
+{% endblock %}

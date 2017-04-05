@@ -2,47 +2,9 @@
 {% block content %}
 	<main role="main" class="content-wrapper">
 	<article class="post-type-{{post.post_type}} flex flex--wrap flex--row-reverse justify--around align--items-baseline" id="post-{{post.ID}}">
-		<section class="header--bg block--angle angle--right after grid--one {% if post._thumbnail_id  != null %}bg--image{% else %}bg--pink{% endif %}">
-		{% if post._thumbnail_id  != null %}<img
-			data-original="{{post.thumbnail.src|resize(1280)}}"
-			alt="{{post.title}}"
-			data-original-set="
-			{{post.thumbnail.src|resize(640)}}  640w,
-			{{post.thumbnail.src|resize(750)}}  750w,
-			{{post.thumbnail.src|resize(1080)}} 1080w,
-			{{post.thumbnail.src|resize(1280)}} 1280w,
-			{{post.thumbnail.src|resize(1366)}} 1366w,
-			{{post.thumbnail.src|resize(1440)}} 1440w,
-			{{post.thumbnail.src|resize(1920)}} 1920w"
-		sizes="100vw">{% endif %}
-		{# <div class="block--content spacing--gutter margin-cener max-wrap vertical--center">
-			<h1 class="color--white line--short">{{post.title}}</h1>
-		</div> #}
-	</section>
-	<div class="blog-author grid--sm-fourth">
-		<strong>{{ post.author.first_name }} {{post.author.last_name}} </strong><br>
-		<time class="text--uppercase font--display">{{ post.post_date|date}}</time>
-		{% include 'components/sections/section--share.twig' %}
-		{# <img src="{{post.author.avatar|resize(300)}}" width="100" align="center">
-		<span>By</span><a class="color--" href="{{post.author.path}}"> {{ post.author.first_name }} {{post.author.last_name}} </a><span></span>
-		<p class="font--smaller">{{post.author.short_biography}}</p> #}
-	</div>
-	<section class="article-content spacing--vert-2 margin--bot-3">
-		<h1 class="color--pink title--stack">{{post.title}}</h1>
-		{{post.content}}
-		<div class="flex--desk  flex--wrap justify--between">
-			<div class="grid--one">
-				<h6 class="color--pink font--display">More Posts:</h6>
-				<hr class="color--pink width text--right hidden--mob">
-				<br class="hidden--dsk">
-			</div>
-			{% for post in nextPosts %}
-				{% include 'components/blocks/block--more-posts.twig' %}
-			{% endfor %}
-		</div>
-	</section>
-</article>
-</main>
-{% endblock %}
-{% block social %}
+		{% include 'components/blocks/block--single-header.twig' %}
+		{% include 'components/blocks/block--single-author.twig' %}
+		{% include 'compontents/sections/section--single-content.twig' %}
+	</article>
+	</main>
 {% endblock %}
