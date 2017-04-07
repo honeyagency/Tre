@@ -1,11 +1,13 @@
 <section class="section--galelry-wrap flex flex--wrap max-wrap margin-center spacing--gutter justify--between margin--top-2">
+	{% if  project.galleryfeature.image != null or project.galleryfeature.video != null %}
 				<div class="block--gallery-featured grid--one type--{{project.galleryfeature.type}} margin--bot-1-mob">
-					{% if project.galleryfeature.type == 'image' %}
+					{% if project.galleryfeature.type == 'image' and project.galleryfeature.image != null %}
 						<img data-original="{{project.galleryfeature.image|resize(1280, 720)}}" alt="{{post.title}}" width="100%" data-original-set=" {{project.galleryfeature.image|resize(640)}}  640w, {{project.galleryfeature.image|resize(750)}}  750w, {{project.galleryfeature.image|resize(1080)}} 1080w, {{project.galleryfeature.image|resize(1280)}} 1280w, {{project.galleryfeature.image|resize(1366)}} 1366w, {{project.galleryfeature.image|resize(1440)}} 1440w, {{project.galleryfeature.image|resize(1920)}} 1920w" sizes="100vw">
 					{% else %}
 						{{project.galleryfeature.video}}
 					{% endif %}
 				</div>
+			{% endif %}
 				<div class="block--gallery grid--one column--1">
 					
 					{% for image in project.gallery %}
