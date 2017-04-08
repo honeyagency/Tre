@@ -150,9 +150,13 @@ function prepareOptionsPage()
         'linkedin'  => get_field('field_58bf40795c1fb', 'option'),
         'youtube'   => get_field('field_58bf40845c1fc', 'option'),
     );
+    $default = array(
+        'image' => new TimberImage(get_field('field_58e87af6b81ee', 'option')),
+    );
     $section = array(
-        'footer' => $footer,
-        'social' => $social,
+        'footer'  => $footer,
+        'social'  => $social,
+        'default' => $default,
     );
     return $section;
 }
