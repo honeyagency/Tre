@@ -5,6 +5,7 @@
         h1 {
             @include media($screen-md) {
                 max-width: 70%;
+                hyphens: none !important;
             }
 
 
