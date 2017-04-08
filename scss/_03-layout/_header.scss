@@ -5,6 +5,7 @@
             animation-duration: .5s;
             animation-fill-mode: forwards;
             animation-timing-function: ease;
+
         }
     }
 }
@@ -58,5 +59,8 @@ header {
         @include media($screen-sm) {
             margin-bottom: 4em;
         }
+
+
+    
     }
 }
