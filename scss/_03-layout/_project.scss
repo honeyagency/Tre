@@ -1,5 +1,7 @@
 .post-type-project {
     .block--content {
+        width: 100%;
+
         h1 {
             @include media($screen-md) {
                 max-width: 70%;
