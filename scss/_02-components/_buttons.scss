@@ -38,10 +38,11 @@
     }
 
     &.color--white {
-        background-position-y: -5%;
+
+        background-position: 100% -5%;
         background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, map-get($black, main) 50%, map-get($black, main) 100%);
         background-color: transparent;
-        background-size: 200%;
+        background-size:100% 200%;
         background-repeat: no-repeat;
         transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic;
 
@@ -88,16 +89,16 @@ input.button.color--black {
         display: none !important;
     }
 
-    background-position-y: -5%;
+    background-position: 100% -5%;
     background-color: transparent;
     background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, map-get($black, main) 50%, map-get($black, main) 100%);
-    background-size: 200%;
+    background-size:100% 200%;
     background-repeat: no-repeat;
     transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic !important;
 
     &:hover {
         transition: background-position-y 0.2s $base-cubic, color 0.1s $base-cubic, border-color 0.1s $base-cubic !important;
-        background-position-y: 100%;
+        background-position: 100%  100%;
         border-color: map-get($black, main);
     }
 }

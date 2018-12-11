@@ -37,6 +37,24 @@ footer {
         }
     }
 
+    i {
+        svg {
+            path {
+                fill: map-get($pink, main);
+            }
+        }
+    }
+
+    .icon-envelope {
+        svg {
+            i {
+                path {
+                    fill: none;
+                }
+            }
+        }
+    }
+
     @include media($screen-sm) {
         &:after {
             left: 0;
