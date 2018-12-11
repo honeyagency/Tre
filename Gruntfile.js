@@ -1,4 +1,5 @@
-var module;
+const sass = require('node-sass');
+var Fiber = require("fibers");
 module.exports = function(grunt) {
     grunt.initConfig({
         conf: {
@@ -14,9 +15,6 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
-            options: {
-                'ASCIIOnly': true,
-            },
             dist: {
                 files: {
                     "app/app.min.js": ['static/**/*.js', '!static/icons/**'],
@@ -26,8 +24,9 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed',
-                    sourcemap: 'none'
+                    implementation: sass,
+                    fiber: Fiber,
+                    sourceMap: false
                 },
                 files: {
                     '<%= conf.app %>/main.min.css': 'scss/main.scss',
@@ -41,6 +40,10 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
+                autoprefixer: {
+                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                    add: true
+                }
             },
             dist: {
                 files: {
@@ -48,19 +51,18 @@ module.exports = function(grunt) {
                 }
             }
         },
-        postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer'),
-                ]
-            },
-            dist: {
-                files: {
-                    '<%= conf.app %>/main.min.css': '<%= conf.app %>/main.min.css'
-                }
-            }
-        },
+        // postcss: {
+        //     options: {
+        //         processors: [
+        //             require('postcss-font-magician')({
+        //                 hosted: '../fonts/'
+        //             })
+        //         ]
+        //     },
+        //     dist: {
+        //         src: '<%= conf.app %>/main.min.css'
+        //     }
+        // },
         watch: {
             twig: {
                 files: '**/*.twig',
@@ -81,7 +83,7 @@ module.exports = function(grunt) {
             },
             cssnano: {
                 files: ["<%= conf.sass %>"],
-                tasks: ["cssnano", "postcss"]
+                tasks: ["cssnano"]
             },
             svgmin: {
                 files: ["<%= conf.iconts %>/*.svg"],
@@ -159,7 +161,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-svgmin');
@@ -169,4 +171,4 @@ module.exports = function(grunt) {
     grunt.registerTask('icons', ['svgmin', 'grunticon', 'clean', 'copy']);
     grunt.registerTask('server', ['uglify', 'sass', 'cssnano', 'svgmin', 'grunticon', 'clean', 'copy']);
     grunt.task.run('notify_hooks');
-};
+}
