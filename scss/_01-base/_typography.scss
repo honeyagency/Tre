@@ -221,6 +221,7 @@ hr {
 
 .wf-loading {
     h1 {
+        @include accelerate;
         opacity: 0;
         transition: opacity .1s ease;
         font-size: 4.7em;
@@ -228,6 +229,7 @@ hr {
     }
 
     h3.title--stack {
+        @include accelerate;
         opacity: 0;
         transition: opacity .1s ease;
         font-family: sans-serif;

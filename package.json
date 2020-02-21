@@ -20,7 +20,6 @@
     },
     "homepage": "https://github.com/joshre/buscemi#readme",
     "devDependencies": {
-        "css-declaration-sorter": "^4.0.1",
         "cssnano": "*",
         "fibers": "*",
         "grunt": "*",
